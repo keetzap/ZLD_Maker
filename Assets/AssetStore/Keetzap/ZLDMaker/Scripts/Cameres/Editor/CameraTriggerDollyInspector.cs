@@ -1,5 +1,5 @@
 using UnityEditor;
-
+/*
 namespace Keetzap.ZeldaMaker
 {
     [CanEditMultipleObjects]
@@ -35,4 +35,4 @@ namespace Keetzap.ZeldaMaker
             EditorGUILayout.PropertyField(startingPoint);
         }
     }
-}
+}*/

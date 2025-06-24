@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEditor;
 using Keetzap.Core;
-
+/*
 namespace Keetzap.ZeldaMaker
 {
     [CanEditMultipleObjects]
@@ -68,4 +68,4 @@ namespace Keetzap.ZeldaMaker
             ResetLabelWidth();
         }
     }
-}
+}*/

@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEditor;
-
+/*
 namespace Keetzap.Feedback
 {
     [CustomEditor(typeof(CameraShake))]
@@ -63,4 +63,4 @@ namespace Keetzap.Feedback
             EditorGUI.indentLevel--;
         }
     }
-}
+}*/

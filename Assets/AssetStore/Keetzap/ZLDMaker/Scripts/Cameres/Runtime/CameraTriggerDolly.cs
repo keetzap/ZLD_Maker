@@ -1,6 +1,6 @@
 using UnityEngine;
-using Cinemachine;
-
+//using Cinemachine;
+/*
 namespace Keetzap.ZeldaMaker
 {
     public class CameraTriggerDolly : CameraTriggerRoomBase
@@ -41,4 +41,4 @@ namespace Keetzap.ZeldaMaker
             smoothPath.m_Waypoints[1] = waypointB;
         }
     }
-}
+}*/

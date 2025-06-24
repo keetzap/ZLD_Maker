@@ -1,5 +1,5 @@
 using UnityEditor;
-
+/*
 namespace Keetzap.ZeldaMaker
 {
     [CanEditMultipleObjects]
@@ -17,4 +17,4 @@ namespace Keetzap.ZeldaMaker
             EndInspector((CameraTriggerSingleRoom)target, "Camera Trigger Single Room asset");
         }
     }
-}
+}*/

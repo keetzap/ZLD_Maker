@@ -1,6 +1,6 @@
-using Cinemachine;
+//using Cinemachine;
 using UnityEngine;
-
+/*
 namespace Keetzap.ZeldaMaker
 {
     public sealed class CameraTriggerVerticalDolly : CameraTriggerDolly
@@ -30,4 +30,4 @@ namespace Keetzap.ZeldaMaker
             _upWaypoint.roll = 0;
         }
     }
-}
+}*/

@@ -1,6 +1,6 @@
 using UnityEngine;
-using Cinemachine;
-
+//using Cinemachine;
+/*
 namespace Keetzap.ZeldaMaker
 {
     public class CameraTriggerRoomBase : MonoBehaviour
@@ -229,4 +229,4 @@ namespace Keetzap.ZeldaMaker
             }
         }
     }
-}
+}*/
