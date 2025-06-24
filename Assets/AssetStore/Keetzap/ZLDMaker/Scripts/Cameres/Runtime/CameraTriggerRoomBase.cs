@@ -1,6 +1,6 @@
 using UnityEngine;
-//using Cinemachine;
-/*
+using Unity.Cinemachine;
+
 namespace Keetzap.ZeldaMaker
 {
     public class CameraTriggerRoomBase : MonoBehaviour
@@ -21,7 +21,7 @@ namespace Keetzap.ZeldaMaker
 
         protected readonly Vector3 singleRoomSize = new(14, 2.1f, 10);
 
-        [SerializeField] protected CinemachineVirtualCamera virtualCamera;
+        [SerializeField] protected CinemachineCamera virtualCamera;
         [SerializeField] private GameObject blackLid;
         [SerializeField] private GameObject blackFrame;
         [SerializeField] private float fadeThreshold = 0.5f;
@@ -229,4 +229,4 @@ namespace Keetzap.ZeldaMaker
             }
         }
     }
-}*/
+}
