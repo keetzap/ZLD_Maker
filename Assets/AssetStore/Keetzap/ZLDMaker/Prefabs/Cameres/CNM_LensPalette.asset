@@ -23,5 +23,5 @@ MonoBehaviour:
     VerticalFOV: 17
   - Name: 125mm
     VerticalFOV: 10
-  - Name: ZLD_Maker Lens
+  - Name: ZLD_Maker
     VerticalFOV: 26
