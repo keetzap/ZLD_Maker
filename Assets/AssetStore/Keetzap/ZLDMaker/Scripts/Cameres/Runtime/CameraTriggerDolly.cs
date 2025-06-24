@@ -1,6 +1,7 @@
 using UnityEngine;
-//using Cinemachine;
-/*
+using Unity.Cinemachine;
+using UnityEngine.Splines;
+
 namespace Keetzap.ZeldaMaker
 {
     public class CameraTriggerDolly : CameraTriggerRoomBase
@@ -14,31 +15,30 @@ namespace Keetzap.ZeldaMaker
         [SerializeField] protected GameObject dollyTrack;
         [SerializeField] protected float startingPoint;
 
-        protected CinemachineSmoothPath smoothPath;
+        protected SplineContainer spline;
         
         protected override void Start()
         {
             base.Start();
 
-            virtualCamera.m_Follow = PlayerController.Instance.gameObject.transform;
+            virtualCamera.Follow = PlayerController.Instance.gameObject.transform;
         }
 
         protected void InitializeSmoothPath()
         {
-            smoothPath = dollyTrack.GetComponent<CinemachineSmoothPath>();
-            smoothPath.m_Waypoints = new CinemachineSmoothPath.Waypoint[2];
+            spline = dollyTrack.GetComponent<SplineContainer>();
         }
 
-        protected void AssignTrackedDollyComponent(Vector3 pathOffset, CinemachineSmoothPath.Waypoint waypointA, CinemachineSmoothPath.Waypoint waypointB)
+        protected void AssignTrackedDollyComponent(Vector3 pathOffset, Vector3 waypointA, Vector3 waypointB)
         {
-            CinemachineTrackedDolly cinemachineTrackedDolly = virtualCamera.AddCinemachineComponent<CinemachineTrackedDolly>();
-            cinemachineTrackedDolly.m_Path = smoothPath;
-            cinemachineTrackedDolly.m_PathPosition = startingPoint;
-            cinemachineTrackedDolly.m_PathOffset = pathOffset;
-            cinemachineTrackedDolly.m_AutoDolly.m_Enabled = true;
+            CinemachineSplineDolly cinemachineSplineDolly = virtualCamera.GetComponent<CinemachineSplineDolly>();
+            cinemachineSplineDolly.Spline = spline;
+            cinemachineSplineDolly.CameraPosition = startingPoint;
+            cinemachineSplineDolly.SplineOffset = pathOffset;
+            cinemachineSplineDolly.AutomaticDolly.Enabled = true;
 
-            smoothPath.m_Waypoints[0] = waypointA;
-            smoothPath.m_Waypoints[1] = waypointB;
+            spline.Splines[0].Add(new BezierKnot(waypointA));
+            spline.Splines[0].Add(new BezierKnot(waypointB));
         }
     }
-}*/
+}
