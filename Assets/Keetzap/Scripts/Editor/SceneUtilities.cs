@@ -85,7 +85,7 @@ namespace Keetzap.EditorTools
             EditorSceneManager.MarkSceneDirty(EditorSceneManager.GetActiveScene());
         }
 
-        [MenuItem("GameObject/Keetzap/Create Separator", false, 1)]
+        [MenuItem("GameObject/Keetzap/Create Separator", false, 0)]
         private static void CreateSeparator()
         {
             _ = new GameObject("────────────────────────");
