@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5621b670e009ce047a574eeee175660c, type: 3}
+  m_Name: PlayerStats
+  m_EditorClassIdentifier: 
+  lifesMaxCapacity: 5
+  currentCapacity: 0
+  currentLifes: 2
+  initialLifes: 3
+  gems: 0
+  silverKeys: 12
+  goldenKeys: 11
+  bossKey: 12
