@@ -1,64 +1,66 @@
-using Keetzap.EditorTools;
 using Keetzap.ZeldaMaker;
 using TMPro;
 using UnityEditor;
 using UnityEngine;
 
-public class PopulateInGameButton : BaseEditorWindow
+namespace Keetzap.EditorTools
 {
-    private readonly string INGAMEBUTTON = "GenericInGameButton";
-    private string _inGameButtonName;
-
-    [MenuItem("Keetzap/Rename InGame Button")]
-    public static void ShowWindow()
+    public class PopulateInGameButton : BaseEditorWindow
     {
-        EditorWindow window = EditorWindow.GetWindow(typeof(PopulateInGameButton));
-        window.maxSize = new Vector2(300, 55);
-        window.minSize = new Vector2(220, 55);
-        window.Show();
-        window.titleContent = new GUIContent("Rename InGame Button");
-    }
+        private readonly string INGAMEBUTTON = "GenericInGameButton";
+        private string _inGameButtonName;
 
-    void OnGUI()
-    {
-        _inGameButtonName = EditorGUILayout.TextField("InGame Button Name", _inGameButtonName);
-        EditorGUILayout.Space(3);
-        if (GUILayout.Button("Rename InGame Button", GUILayout.ExpandWidth(true), GUILayout.Height(22)))
+        [MenuItem("Keetzap/Rename InGame Button")]
+        public static void ShowWindow()
         {
-            RenameInGameButton();
-        }
-    }
-
-    public void RenameInGameButton()
-    {
-        GameObject[] selectedObjects = Selection.gameObjects;
-
-        if (selectedObjects.Length != 1)
-        {
-            EditorUtility.DisplayDialog("Invalid selection", "Select only a single object (specifically the root of the InGame Button), please!", "Ok");
-            return;
+            EditorWindow window = EditorWindow.GetWindow(typeof(PopulateInGameButton));
+            window.maxSize = new Vector2(300, 55);
+            window.minSize = new Vector2(220, 55);
+            window.Show();
+            window.titleContent = new GUIContent("Rename InGame Button");
         }
 
-        if (selectedObjects[0].transform.GetChild(0).GetComponent<GenericButtonInGameController>() == null)
+        void OnGUI()
         {
-            EditorUtility.DisplayDialog("Invalid selection", "Please, select an InGame Button.", "Ok");
-            return;
+            _inGameButtonName = EditorGUILayout.TextField("InGame Button Name", _inGameButtonName);
+            EditorGUILayout.Space(3);
+            if (GUILayout.Button("Rename InGame Button", GUILayout.ExpandWidth(true), GUILayout.Height(22)))
+            {
+                RenameInGameButton();
+            }
         }
 
-        Undo.RecordObject(selectedObjects[0], "Rename InGame Button");
+        public void RenameInGameButton()
+        {
+            GameObject[] selectedObjects = Selection.gameObjects;
 
-        string newPrefabName = selectedObjects[0].name.Replace(INGAMEBUTTON, _inGameButtonName);
-        selectedObjects[0].name = newPrefabName;
+            if (selectedObjects.Length != 1)
+            {
+                EditorUtility.DisplayDialog("Invalid selection", "Select only a single object (specifically the root of the InGame Button), please!", "Ok");
+                return;
+            }
 
-        GameObject button = selectedObjects[0].transform.Find(string.Format($"BTN_{INGAMEBUTTON}")).gameObject;
-        string newButtonName = button.name.Replace(INGAMEBUTTON, _inGameButtonName);
-        button.name = newButtonName;
+            if (selectedObjects[0].transform.GetChild(0).GetComponent<GenericButtonInGameController>() == null)
+            {
+                EditorUtility.DisplayDialog("Invalid selection", "Please, select an InGame Button.", "Ok");
+                return;
+            }
 
-        GameObject text = selectedObjects[0].transform.GetChild(0).transform.Find(string.Format($"TXT_{INGAMEBUTTON}")).gameObject;
-        string newTextName = text.name.Replace(INGAMEBUTTON, _inGameButtonName);
-        text.name = newTextName;
-        text.GetComponent<TMP_Text>().text = _inGameButtonName;
+            Undo.RecordObject(selectedObjects[0], "Rename InGame Button");
 
-        EditorUtility.SetDirty(selectedObjects[0]);
+            string newPrefabName = selectedObjects[0].name.Replace(INGAMEBUTTON, _inGameButtonName);
+            selectedObjects[0].name = newPrefabName;
+
+            GameObject button = selectedObjects[0].transform.Find(string.Format($"BTN_{INGAMEBUTTON}")).gameObject;
+            string newButtonName = button.name.Replace(INGAMEBUTTON, _inGameButtonName);
+            button.name = newButtonName;
+
+            GameObject text = selectedObjects[0].transform.GetChild(0).transform.Find(string.Format($"TXT_{INGAMEBUTTON}")).gameObject;
+            string newTextName = text.name.Replace(INGAMEBUTTON, _inGameButtonName);
+            text.name = newTextName;
+            text.GetComponent<TMP_Text>().text = _inGameButtonName;
+
+            EditorUtility.SetDirty(selectedObjects[0]);
+        }
     }
 }
