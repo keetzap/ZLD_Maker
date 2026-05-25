@@ -12,6 +12,7 @@ namespace Keetzap.Feedback
         protected override void OnEnable()
         {
             base.OnEnable();
+            if (target == null) return;
 
             timeline = serializedObject.FindProperty(PlayTimeline.Fields.PlayableDirector);
 

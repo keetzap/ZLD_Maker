@@ -17,6 +17,7 @@ namespace Keetzap.Feedback
         protected override void OnEnable()
         {
             base.OnEnable();
+            if (target == null) return;
 
             model = serializedObject.FindProperty(ImpulseObject.Fields.Model);
             typeOfImpulse = serializedObject.FindProperty(ImpulseObject.Fields.TypeOfImpulse);

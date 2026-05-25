@@ -11,6 +11,7 @@ namespace Keetzap.Feedback
         protected override void OnEnable()
         {
             base.OnEnable();
+            if (target == null) return;
 
             animator = serializedObject.FindProperty(PlayAnimation.Fields.Animator);
             stateName = serializedObject.FindProperty(PlayAnimation.Fields.StateName);

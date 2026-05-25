@@ -17,6 +17,8 @@ namespace Keetzap.Feedback
 
         protected virtual void OnEnable()
         {
+            if (target == null) return;
+
             label = serializedObject.FindProperty(FeedbackEffect.Fields.DisplayLabel);
             delay = serializedObject.FindProperty(FeedbackEffect.Fields.Delay);
             duration = serializedObject.FindProperty(FeedbackEffect.Fields.Duration);

@@ -12,6 +12,7 @@ namespace Keetzap.Feedback
         protected override void OnEnable()
         {
             base.OnEnable();
+            if (target == null) return;
 
             objectToEnable = serializedObject.FindProperty(ObjectVisibility.Fields.ObjectToEnable);
             visibility = serializedObject.FindProperty(ObjectVisibility.Fields.Visibility);

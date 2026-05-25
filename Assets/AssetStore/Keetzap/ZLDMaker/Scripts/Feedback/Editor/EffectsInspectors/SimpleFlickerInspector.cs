@@ -11,11 +11,12 @@ namespace Keetzap.Feedback
         private SerializedProperty flickerFrequence;
         private SerializedProperty colorReplacement;
         private SerializedProperty flickerColor;
-        private SerializedProperty flickerMaterial;
+        private SerializedProperty flickerMaterial; 
 
         protected override void OnEnable()
         {
             base.OnEnable();
+            if (target == null) return;
 
             renderObject = serializedObject.FindProperty(SimpleFlicker.Fields.RenderObject);
             flickerFrequence = serializedObject.FindProperty(SimpleFlicker.Fields.FlickerFrequence);

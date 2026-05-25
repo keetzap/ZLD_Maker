@@ -19,6 +19,7 @@ namespace Keetzap.Feedback
         protected override void OnEnable()
         {
             base.OnEnable();
+            if (target == null) return;
 
             model = serializedObject.FindProperty(SpinObject.Fields.Model);
             spinSpeed = serializedObject.FindProperty(SpinObject.Fields.SpinSpeed);

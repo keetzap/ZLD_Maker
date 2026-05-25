@@ -12,6 +12,7 @@ namespace Keetzap.Feedback
         protected override void OnEnable()
         {
             base.OnEnable();
+            if (target == null) return;
 
             objectToSpawn = serializedObject.FindProperty(SpawnObject.Fields.ObjectToSpawn);
             effect = serializedObject.FindProperty(SpawnObject.Fields.Effect);

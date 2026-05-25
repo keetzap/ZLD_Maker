@@ -10,6 +10,7 @@ namespace Keetzap.Feedback
     {
         private Blink blink;
 
+        /**/
         private SerializedProperty useThisObject;
         private SerializedProperty renderObject;
         private SerializedProperty sequence;
@@ -19,6 +20,7 @@ namespace Keetzap.Feedback
         protected override void OnEnable()
         {
             base.OnEnable();
+            if (target == null) return;
 
             blink = (Blink)target;
 

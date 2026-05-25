@@ -26,6 +26,7 @@ namespace Keetzap.Feedback
         protected override void OnEnable()
         {
             base.OnEnable();
+            if (target == null) return;
 
             clip = serializedObject.FindProperty(SoundEffect.Fields.Clip);
             playRandomSound = serializedObject.FindProperty(SoundEffect.Fields.PlayRandomSound);
