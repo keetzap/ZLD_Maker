@@ -1,0 +1,14 @@
+{
+  "name": "sparta.extensions.selectionhistoryplus",
+  "version": "2026.11.0",
+  "displayName": "Sparta - Selection History Plus",
+  "description": "Editor Window to track your selection history and much more",
+  "unity": "6000.1",
+  "keywords": [],
+  "dependencies": {},
+  "author": {
+    "name": "Zynga Mobile Game Tech",
+    "email": "clienttech@zynga.com",
+    "url": "https://github.com/socialpoint/sp-unity-sparta/tree/master/Packages/Extensions/SelectionHistoryPlus"
+  }
+}
