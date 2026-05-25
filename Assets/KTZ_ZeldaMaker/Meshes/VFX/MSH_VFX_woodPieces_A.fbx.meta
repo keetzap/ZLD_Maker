@@ -1,24 +1,24 @@
 fileFormatVersion: 2
-guid: e0671c334390f5047a218d021f4ce091
+guid: 433c1302ae523ea46badb266a1c18b21
 ModelImporter:
-  serializedVersion: 24200
+  serializedVersion: 21300
   internalIDToNameTable: []
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: MAT_equipment_metallic
-    second: {fileID: 2100000, guid: ed58a91c4eb26b347bff3030fd63e5ec, type: 2}
+      name: MAT_enviro_emissive
+    second: {fileID: 2100000, guid: 79d4066c2d76d3547b6d8d5befff5935, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: MAT_equipment_solid
-    second: {fileID: 2100000, guid: 47608255707392748b20457b3434e67b, type: 2}
+      name: MAT_enviro_metallic
+    second: {fileID: 2100000, guid: affb493af5df8074983916269f8035da, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: MAT_gameplay_solid
-    second: {fileID: 2100000, guid: 0d0b2b4763fab7545a4f21cd1db25619, type: 2}
+      name: MAT_enviro_solid
+    second: {fileID: 2100000, guid: f97016f3d0baa3e4d9f3d53895f4e547, type: 2}
   materials:
     materialImportMode: 2
     materialName: 1
@@ -31,6 +31,8 @@ ModelImporter:
     optimizeGameObjects: 0
     removeConstantScaleCurves: 1
     motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
     animationRetargetingWarnings: 
@@ -49,11 +51,10 @@ ModelImporter:
   meshes:
     lODScreenPercentages: []
     globalScale: 1
-    meshCompression: 0
+    meshCompression: 2
     addColliders: 0
     useSRGBMaterialColor: 1
-    sortHierarchyByName: 0
-    importPhysicalCameras: 1
+    sortHierarchyByName: 1
     importVisibility: 0
     importBlendShapes: 0
     importCameras: 0
@@ -71,9 +72,6 @@ ModelImporter:
     maxBonesPerVertex: 4
     minBoneWeight: 0.001
     optimizeBones: 0
-    generateMeshLods: 0
-    meshLodGenerationFlags: 0
-    maximumMeshLod: -1
     meshOptimizationFlags: -1
     indexFormat: 0
     secondaryUVAngleDistortion: 8
@@ -84,7 +82,6 @@ ModelImporter:
     secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
     useFileScale: 0
-    strictVertexDataChecks: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -117,7 +114,6 @@ ModelImporter:
   humanoidOversampling: 1
   avatarSetup: 0
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
-  importBlendShapeDeformPercent: 0
   remapMaterialsIfMaterialImportModeIsNone: 0
   additionalBone: 0
   userData: 

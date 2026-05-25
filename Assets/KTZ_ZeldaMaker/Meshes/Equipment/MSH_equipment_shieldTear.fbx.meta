@@ -1,7 +1,7 @@
 fileFormatVersion: 2
 guid: 14173ed541270da4db87dc5848f426a9
 ModelImporter:
-  serializedVersion: 21300
+  serializedVersion: 24200
   internalIDToNameTable: []
   externalObjects:
   - first:
@@ -13,7 +13,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: MAT_equipment_solid
-    second: {fileID: 2100000, guid: 05fff89c0407c2d4b9cb2aeeb1e67b52, type: 2}
+    second: {fileID: 2100000, guid: 47608255707392748b20457b3434e67b, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -31,8 +31,6 @@ ModelImporter:
     optimizeGameObjects: 0
     removeConstantScaleCurves: 1
     motionNodeName: 
-    rigImportErrors: 
-    rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
     animationRetargetingWarnings: 
@@ -55,6 +53,7 @@ ModelImporter:
     addColliders: 0
     useSRGBMaterialColor: 1
     sortHierarchyByName: 0
+    importPhysicalCameras: 1
     importVisibility: 0
     importBlendShapes: 0
     importCameras: 0
@@ -72,6 +71,9 @@ ModelImporter:
     maxBonesPerVertex: 4
     minBoneWeight: 0.001
     optimizeBones: 0
+    generateMeshLods: 0
+    meshLodGenerationFlags: 0
+    maximumMeshLod: -1
     meshOptimizationFlags: -1
     indexFormat: 0
     secondaryUVAngleDistortion: 8
@@ -82,6 +84,7 @@ ModelImporter:
     secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
     useFileScale: 0
+    strictVertexDataChecks: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -114,6 +117,7 @@ ModelImporter:
   humanoidOversampling: 1
   avatarSetup: 0
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  importBlendShapeDeformPercent: 0
   remapMaterialsIfMaterialImportModeIsNone: 0
   additionalBone: 0
   userData: 

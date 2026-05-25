@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46b681af518ae2b409bdcf5011ab1b81, type: 3}
+  m_Name: GD_GameDataConfiguration
+  m_EditorClassIdentifier: 
+  playerStats: {fileID: 11400000, guid: a1d019ce194e1a542948f23f6978ffd8, type: 2}
+  leftWeapon: {fileID: 11400000, guid: 5b147a5b511b5314ea13ce7c0bc2e45b, type: 2}
+  collectables:
+  - {fileID: 11400000, guid: 690effff304616344813bb24879f4565, type: 2}
+  keys: []
