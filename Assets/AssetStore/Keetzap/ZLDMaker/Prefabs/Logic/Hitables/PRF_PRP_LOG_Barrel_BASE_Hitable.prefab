@@ -77,7 +77,7 @@ GameObject:
   - component: {fileID: 5206675396069035354}
   - component: {fileID: 6170208142670901011}
   m_Layer: 0
-  m_Name: PRF_PRP_LOG_Barrel_BASE
+  m_Name: PRF_PRP_LOG_Barrel_BASE_Hitable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
