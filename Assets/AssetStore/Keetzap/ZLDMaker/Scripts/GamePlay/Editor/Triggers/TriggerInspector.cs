@@ -42,6 +42,26 @@ namespace Keetzap.ZeldaMaker
                 list.DoLayoutList();
             }
             EditorGUILayout.EndHorizontal();
+
+            bool hasNull = false;
+            if (listeners != null && listeners.isArray)
+            {
+                for (int i = 0; i < listeners.arraySize; i++)
+                {
+                    var element = listeners.GetArrayElementAtIndex(i);
+                    var inner = element.FindPropertyRelative("listener");
+                    if (inner != null && inner.objectReferenceValue == null)
+                    {
+                        hasNull = true;
+                        break;
+                    }
+                }
+            }
+
+            if (hasNull)
+            {
+                EditorGUILayout.HelpBox("One or more Listener entries are empty. Please assign a valid listener object to avoid NullReferenceException.", MessageType.Warning);
+            }
         }
 
         void DrawListItems(Rect rect, int index, bool isActive, bool isFocused)

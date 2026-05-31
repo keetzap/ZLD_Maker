@@ -72,7 +72,10 @@ namespace Keetzap.ZeldaMaker
                 Gizmos.color = dependencyLineColor;
                 foreach (var listener in listeners)
                 {
-                    CustomGizmos.DrawArrow(transform.position + Collider.center, listener.listener.transform.position, 0.3f, 30f, 1);
+                    if (listener.listener != null)
+                    {
+                        CustomGizmos.DrawArrow(transform.position + Collider.center, listener.listener.transform.position, 0.3f, 30f, 1);
+                    }
                 }
             }
         }
