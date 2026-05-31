@@ -1,4 +1,4 @@
-﻿using UnityEditor;
+using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEngine;
 
@@ -6,8 +6,9 @@ namespace Keetzap.EditorTools
 {
     public class SceneUtilities : BaseEditorWindow
     {
-        private bool _enableNegativeScales;
-        private bool _includeYAxis;
+        internal static bool EnableNegativeScales;
+        internal static bool IncludeYAxis;
+        internal static float SnapStep = 0.5f;
 
         [MenuItem("Keetzap/Scene Utilities")]
         static void Init()
@@ -15,14 +16,14 @@ namespace Keetzap.EditorTools
             SceneUtilities window = (SceneUtilities)EditorWindow.GetWindow(typeof(SceneUtilities));
             
             SetMargings(10, 5, 5, 5);
-            SetSize(window, 300, 400, 120, 120);
+            SetSize(window, 300, 400, 150, 150);
             window.titleContent.text = "Scene Utilities";
             window.Show();
         }
 
         protected sealed override void MainSection()
         {
-            _enableNegativeScales = EditorGUILayout.Toggle(new GUIContent("Enable Negative Scales"), _enableNegativeScales);
+            EnableNegativeScales = EditorGUILayout.Toggle(new GUIContent("Enable Negative Scales"), EnableNegativeScales);
 
             EditorGUILayout.Space(3);
             EditorGUILayout.BeginHorizontal();
@@ -36,7 +37,8 @@ namespace Keetzap.EditorTools
 
             Decorators.Separator();
 
-            _includeYAxis = EditorGUILayout.Toggle(new GUIContent("Round also Y axis"), _includeYAxis);
+            IncludeYAxis = EditorGUILayout.Toggle(new GUIContent("Round also Y axis"), IncludeYAxis);
+            SnapStep = EditorGUILayout.FloatField(new GUIContent("Snap Step"), SnapStep);
 
             EditorGUILayout.Space(3);
             EditorGUILayout.BeginHorizontal();
@@ -49,7 +51,7 @@ namespace Keetzap.EditorTools
             EditorGUILayout.EndHorizontal();
         }
 
-        private void ApplyTransformationsOnly()
+        internal static void ApplyTransformationsOnly()
         {
             var selection = Selection.gameObjects;
 
@@ -58,7 +60,7 @@ namespace Keetzap.EditorTools
                 Vector3 randomRotation = new (0, 90 * Random.Range(0, 4), 0);
                 o.transform.eulerAngles = randomRotation;
 
-                if (_enableNegativeScales)
+                if (EnableNegativeScales)
                 {
                     Vector3 randomScale = new (2 * Random.Range(0, 2) - 1, 1, 2 * Random.Range(0, 2) - 1);
                     o.transform.localScale = randomScale;
@@ -68,16 +70,18 @@ namespace Keetzap.EditorTools
             EditorSceneManager.MarkSceneDirty(EditorSceneManager.GetActiveScene());
         }
 
-        private void ApplyRoundPosition()
+        internal static void ApplyRoundPosition()
         {
             var selection = Selection.gameObjects;
 
             foreach (GameObject o in selection)
             {
                 Vector3 currentPosition = o.transform.localPosition;
-                currentPosition *= 10;
-                currentPosition = new(Mathf.RoundToInt(currentPosition.x), _includeYAxis ? Mathf.RoundToInt(currentPosition.y) : currentPosition.y, Mathf.RoundToInt(currentPosition.z));
-                currentPosition /= 10.0f;
+                currentPosition = new(
+                    Mathf.Round(currentPosition.x / SnapStep) * SnapStep,
+                    IncludeYAxis ? Mathf.Round(currentPosition.y / SnapStep) * SnapStep : currentPosition.y,
+                    Mathf.Round(currentPosition.z / SnapStep) * SnapStep
+                );
 
                 o.transform.localPosition = currentPosition;
             }
