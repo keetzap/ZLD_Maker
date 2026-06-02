@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: ACO_FloorButton
+  m_Controller: {fileID: 9100000, guid: 548fb0515840086429b34e9fbf271591, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: ee0faaf07f5fca243b50857b096d0809, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: c37991d4e48df9944968b10f4b25b63c, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 7649bd73dfb772d44b4055370a312041, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 854edd944ce9a1d4fac0d7daba51d0b3, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 294fff88b0a199f40b5cbd1866b07871, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 3f91b75ecde9a2a42a12529b1b5248e2, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 80b64fac6d47e1547a874139438d69d8, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 84714d1e88ca2e84da09c4b995358c21, type: 2}
