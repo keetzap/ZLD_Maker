@@ -23,7 +23,8 @@ namespace Keetzap.Feedback
         {
             yield return new WaitForSeconds(delay);
 
-            Vector3 anchor = effect.anchorType == TypeOfAnchor.Transform ? effect.anchorTransform.position : transform.position + effect.anchorOffset;
+            Vector3 transformPosition = effect.anchorTransform == null ? transform.position : effect.anchorTransform.position;
+            Vector3 anchor = effect.anchorType == TypeOfAnchor.Transform ? transformPosition : transform.position + effect.anchorOffset;
 
             _ = (GameObject)Instantiate(objectToSpawn, anchor, Quaternion.identity);
         }
