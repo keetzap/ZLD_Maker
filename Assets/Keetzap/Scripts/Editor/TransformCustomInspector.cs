@@ -108,8 +108,8 @@ namespace Keetzap.EditorTools
                     foreach (Transform t in targets)
                     {
                         Undo.RecordObject(t, "Reset Transform");
-                        t.position = Vector3.zero;
-                        t.rotation = Quaternion.identity;
+                        t.localPosition = Vector3.zero;
+                        t.localRotation = Quaternion.identity;
                         t.localScale = Vector3.one;
                     }
                 }
