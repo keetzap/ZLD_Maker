@@ -48,6 +48,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6452109966228145227, guid: 2ed565c501857a34e833e6bf7416be10, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6862753937207575159, guid: 2ed565c501857a34e833e6bf7416be10, type: 3}
       propertyPath: m_Name
       value: PRF_PRP_RockSkull
