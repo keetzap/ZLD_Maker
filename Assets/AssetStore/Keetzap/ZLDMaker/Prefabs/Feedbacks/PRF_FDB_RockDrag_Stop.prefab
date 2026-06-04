@@ -1,0 +1,111 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1673119356608678894
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6027049829627177618}
+  - component: {fileID: 9009419646070961626}
+  - component: {fileID: 6100094700429313779}
+  - component: {fileID: 3534076035012017779}
+  m_Layer: 0
+  m_Name: PRF_FDB_RockDrag_Stop
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6027049829627177618
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1673119356608678894}
+  serializedVersion: 2
+  m_LocalRotation: {x: 1.7763568e-15, y: -0.0000000745058, z: -6.809318e-15, w: 1}
+  m_LocalPosition: {x: 1.4999988, y: -0, z: -6.5000005}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9009419646070961626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1673119356608678894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6990136d8b09ec44e8ba1f3a242eb74f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unparentFeedback: 0
+  destroyFeedbackAfterPlaying: 0
+  _feedbackPlayerSettings:
+    _timeScale: 0
+  _feedbacks:
+  - {fileID: 3534076035012017779}
+  - {fileID: 6100094700429313779}
+  totalDuration: 0
+--- !u!114 &6100094700429313779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1673119356608678894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de099ecd6493766408f25c143456aee5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _displayLabel: Spawn Object
+  _displayColor: {r: 0, g: 0, b: 0, a: 1}
+  _expanded: 1
+  _delay: 0
+  _duration: 0
+  _ignoreStopCoroutine: 1
+  _childControlsDuration:
+    childControlsDuration: 1
+    message: 
+  objectToSpawn: {fileID: 1859687492662658151, guid: 34a509e79ee1b2347b0a4aa021dadce8, type: 3}
+  effect:
+    anchorType: 0
+    anchorTransform: {fileID: 0}
+    anchorOffset: {x: 0, y: 0, z: 0}
+--- !u!114 &3534076035012017779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1673119356608678894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2b2c6e7aa484e4419d88c93d1348215, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _displayLabel: Play_dragStone
+  _displayColor: {r: 0, g: 0, b: 0, a: 1}
+  _expanded: 1
+  _delay: 0
+  _duration: 0
+  _ignoreStopCoroutine: 1
+  _childControlsDuration:
+    childControlsDuration: 1
+    message: 
+  clip: {fileID: 8300000, guid: 9d8235027aac13f4a9c8cabad48f00e7, type: 3}
+  playRandomSound: 0
+  randomClips: []
+  loop: 0
+  minVolume: 1
+  maxVolume: 1
+  minPitch: 1
+  maxPitch: 1
