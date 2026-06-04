@@ -52,18 +52,18 @@ namespace Keetzap.ZeldaMaker
 
         private void SectionMainProperties()
         {
-            EditorGUILayout.PropertyField(moveOnSingleTile, new GUIContent("Move one tile only ***"));
-            EditorGUILayout.PropertyField(typeOfDirection, new GUIContent("Allowed directions"));
+            EditorGUILayout.PropertyField(moveOnSingleTile, new GUIContent("Move One Tile Only"));
+            EditorGUILayout.PropertyField(typeOfDirection, new GUIContent("Allowed Directions"));
             EditorGUILayout.Space(2);
-            EditorGUILayout.PropertyField(pushTimeThreshold);
-            EditorGUILayout.PropertyField(timeToReachNextTile);
-            EditorGUILayout.PropertyField(animationCurve, new GUIContent("Movement anim. curve ***"));
+            EditorGUILayout.PropertyField(pushTimeThreshold, new GUIContent("Push Time Threshold"));
+            EditorGUILayout.PropertyField(timeToReachNextTile, new GUIContent("Time To Reach Next Tile"));
+            EditorGUILayout.PropertyField(animationCurve, new GUIContent("Movement Anim. Curve"));
         }
 
         private void SectionFeedbacks()
         {
-            EditorGUILayout.PropertyField(pushFeedback, new GUIContent("Moving feedback ***"));
-            EditorGUILayout.PropertyField(stopFeedback);
+            EditorGUILayout.PropertyField(pushFeedback, new GUIContent("Moving Feedback"));
+            EditorGUILayout.PropertyField(stopFeedback, new GUIContent("Stop Feedback"));
         }
     }
 }

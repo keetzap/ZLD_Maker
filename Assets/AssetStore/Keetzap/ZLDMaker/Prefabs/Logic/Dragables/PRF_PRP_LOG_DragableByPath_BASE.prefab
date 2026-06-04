@@ -118,6 +118,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Keetzap.ZeldaMaker.DraggableByPath
   pushTimeThreshold: 0.3
+  triggerShrinkFactor: 0.5
   targetPositionMode: 1
   targetTransform: {fileID: 0}
   targetPositionVector: {x: 0, y: 0, z: 1}
