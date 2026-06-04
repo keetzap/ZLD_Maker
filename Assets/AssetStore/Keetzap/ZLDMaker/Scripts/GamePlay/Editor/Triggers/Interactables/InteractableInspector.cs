@@ -32,7 +32,7 @@ namespace Keetzap.ZeldaMaker
             Decorators.HeaderBig("Basic Options");
             {
                 EditorGUI.indentLevel++;
-                EditorGUILayout.PropertyField(showHintMessage, new GUIContent("Show Hint Message ***"));
+                EditorGUILayout.PropertyField(showHintMessage, new GUIContent("Show Hint Message"));
                 EditorGUI.BeginDisabledGroup(showHintMessage.boolValue == false);
                 {
                     EditorGUI.indentLevel++;
@@ -51,7 +51,7 @@ namespace Keetzap.ZeldaMaker
                 EditorGUIUtility.labelWidth = 230;
                 EditorGUILayout.PropertyField(pauseCharacter, new GUIContent("Pause character interactions"));
                 EditorGUILayout.PropertyField(hideWeapons, new GUIContent("Hide weapons while interacting"));
-                EditorGUILayout.PropertyField(destroyAfterInteraction, new GUIContent("Single interaction (only once) ***"));
+                EditorGUILayout.PropertyField(destroyAfterInteraction, new GUIContent("Single interaction (only once)"));
                 ResetLabelWidth();
                 EditorGUI.indentLevel--;
             }

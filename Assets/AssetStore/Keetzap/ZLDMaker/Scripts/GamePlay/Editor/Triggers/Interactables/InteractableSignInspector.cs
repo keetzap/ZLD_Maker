@@ -27,8 +27,8 @@ namespace Keetzap.ZeldaMaker
             InitInspector();
 
             Section("COMMON PROPERTIES", SectionCommonProperties);
-            Section("INTERACTABLE SIGN PROPERTIES", SectionSignProperties);
-            Section("INTERACTABLE SIGN FEEDBACK", SectionInteractableFeedback);
+            Section("PROPERTIES", SectionSignProperties);
+            Section("FEEDBACK", SectionInteractableFeedback);
             Section("DEBUG", SectionDebug);
 
             EndInspector(sign, "Interactable sign asset");
@@ -36,8 +36,8 @@ namespace Keetzap.ZeldaMaker
 
         private void SectionSignProperties()
         {
-            EditorGUILayout.PropertyField(typeOfMessage, new GUIContent("Sign type ***"));
-            EditorGUILayout.LabelField("Message text ***");
+            EditorGUILayout.PropertyField(typeOfMessage, new GUIContent("Sign type"));
+            EditorGUILayout.LabelField("Message text");
             GUILayout.Space(2);
             message.stringValue = EditorGUILayout.TextArea(message.stringValue, GUILayout.MinHeight(40));
         }     
