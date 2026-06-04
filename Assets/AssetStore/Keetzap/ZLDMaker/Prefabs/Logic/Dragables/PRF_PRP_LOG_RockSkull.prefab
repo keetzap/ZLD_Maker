@@ -78,17 +78,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: PRF_PRP_LOG_RockSkull
       objectReference: {fileID: 0}
-    - target: {fileID: 1131099322654094660, guid: fe2a8fe942e22f048b27147e99161b62, type: 3}
-      propertyPath: lookAtTarget
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1131099322654094660, guid: fe2a8fe942e22f048b27147e99161b62, type: 3}
-      propertyPath: draggableRenderer
-      value: 
-      objectReference: {fileID: 2918262259591196991}
     - target: {fileID: 3733952648131584139, guid: fe2a8fe942e22f048b27147e99161b62, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -2.5
       objectReference: {fileID: 0}
     - target: {fileID: 3733952648131584139, guid: fe2a8fe942e22f048b27147e99161b62, type: 3}
       propertyPath: m_LocalPosition.y
@@ -96,7 +88,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3733952648131584139, guid: fe2a8fe942e22f048b27147e99161b62, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -1.5
       objectReference: {fileID: 0}
     - target: {fileID: 3733952648131584139, guid: fe2a8fe942e22f048b27147e99161b62, type: 3}
       propertyPath: m_LocalRotation.w
@@ -104,15 +96,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3733952648131584139, guid: fe2a8fe942e22f048b27147e99161b62, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3733952648131584139, guid: fe2a8fe942e22f048b27147e99161b62, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3733952648131584139, guid: fe2a8fe942e22f048b27147e99161b62, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3733952648131584139, guid: fe2a8fe942e22f048b27147e99161b62, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -134,11 +126,6 @@ PrefabInstance:
       addedObject: {fileID: 6705185312096869124}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fe2a8fe942e22f048b27147e99161b62, type: 3}
---- !u!1 &2918262259591196991 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2577505641783252672, guid: fe2a8fe942e22f048b27147e99161b62, type: 3}
-  m_PrefabInstance: {fileID: 845238198720456703}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7370394138945775800 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7922401027480424263, guid: fe2a8fe942e22f048b27147e99161b62, type: 3}

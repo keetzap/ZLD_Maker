@@ -11,6 +11,7 @@ namespace Keetzap.ZeldaMaker
         private DraggableByPath draggableByPath;
 
         private SerializedProperty pushTimeThreshold;
+        private SerializedProperty triggerShrinkFactor;
         private SerializedProperty targetPositionMode;
         private SerializedProperty targetTransform;
         private SerializedProperty targetPositionVector;
@@ -27,6 +28,7 @@ namespace Keetzap.ZeldaMaker
             draggableByPath = (DraggableByPath)target;
 
             pushTimeThreshold = serializedObject.FindProperty(DraggableByPath.Fields.PushTimeThreshold);
+            triggerShrinkFactor = serializedObject.FindProperty(DraggableByPath.Fields.TriggerShrinkFactor);
             targetPositionMode = serializedObject.FindProperty(DraggableByPath.Fields.TargetPositionMode);
             targetTransform = serializedObject.FindProperty(DraggableByPath.Fields.TargetTransform);
             targetPositionVector = serializedObject.FindProperty(DraggableByPath.Fields.TargetPositionVector);
@@ -60,6 +62,7 @@ namespace Keetzap.ZeldaMaker
         private void SectionMainProperties()
         {
             EditorGUILayout.PropertyField(pushTimeThreshold);
+            EditorGUILayout.PropertyField(triggerShrinkFactor, new GUIContent("Trigger Shrink Factor"));
             EditorGUILayout.PropertyField(targetPositionMode);
 
             var mode = (DraggableByPath.TargetPositionMode)targetPositionMode.enumValueIndex;

@@ -12,6 +12,7 @@ namespace Keetzap.ZeldaMaker
         public static class Fields
         {
             public static string PushTimeThreshold => nameof(pushTimeThreshold);
+            public static string TriggerShrinkFactor => nameof(triggerShrinkFactor);
             public static string TargetPositionMode => nameof(targetPositionMode);
             public static string TargetTransform => nameof(targetTransform);
             public static string TargetPositionVector => nameof(targetPositionVector);
@@ -25,6 +26,7 @@ namespace Keetzap.ZeldaMaker
         }
 
         [SerializeField] private float pushTimeThreshold = 0.3f;
+        [SerializeField] [Range(0.1f, 1f)] private float triggerShrinkFactor = 0.5f;
         [SerializeField] private TargetPositionMode targetPositionMode = TargetPositionMode.Transform;
         [SerializeField] private Transform targetTransform;
         [SerializeField] private Vector3 targetPositionVector = new Vector3(0f, 0f, 1f);
@@ -47,6 +49,7 @@ namespace Keetzap.ZeldaMaker
         
         private PlayerController _playerController;
         private BoxCollider _colliderTrigger;
+        private Rigidbody _rigidbody;
         private Vector3 _initPosition;
         private Vector3 _targetPosition;
         private Vector3 _absoluteVector3Target;
@@ -58,10 +61,12 @@ namespace Keetzap.ZeldaMaker
         private Vector3 _pushDirection;
         private float thresholdTile = 0.05f;
         private Vector3 _colliderCenter;
+        private Vector3 _colliderSize;
         private float _pushAngle;
 
         private void Awake()
         {
+            _rigidbody = GetComponent<Rigidbody>();
             InitializeTimeThreshold();
             SetTriggerCollider();
 
@@ -74,13 +79,14 @@ namespace Keetzap.ZeldaMaker
 
         private void SetTriggerCollider()
         {
-            Component[] components = gameObject.GetComponents(typeof(BoxCollider));
-            foreach (Component component in components)
+            Collider[] components = gameObject.GetComponents<Collider>();
+            foreach (Collider component in components)
             {
-                if ((component as BoxCollider).isTrigger)
+                if (component.isTrigger && component is BoxCollider)
                 {
                     _colliderTrigger = (BoxCollider)component;
                     _colliderCenter = _colliderTrigger.center;
+                    _colliderSize = _colliderTrigger.size;
                     return;
                 }
             }
@@ -98,14 +104,23 @@ namespace Keetzap.ZeldaMaker
 
             if (_objectIsPushed)
             {
-                transform.position += _pathDirection.normalized * _playerController.PushSpeed * _pushAngle * Time.deltaTime;
+                Vector3 moveDelta = _pathDirection.normalized * _playerController.PushSpeed * _pushAngle * Time.deltaTime;
+
+                Vector3 sweepDirection = _pushAngle >= 0 ? _pathDirection.normalized : -_pathDirection.normalized;
+
+                if (_rigidbody.SweepTest(sweepDirection, out RaycastHit hit, moveDelta.magnitude, QueryTriggerInteraction.Ignore))
+                {
+                    return;
+                }
+
+                transform.position += moveDelta;
 
                 if (lockAtTheEnd && Vector3.Distance(transform.position, _targetPosition) < thresholdTile)
                 {
                     transform.position = _targetPosition;
                     _objectIsPushed = false;
                     _objectHasReachDestination = true;
-                    _colliderTrigger.size = Vector3.one;
+                    _colliderTrigger.size = _colliderSize;
                 }
             }
         }
@@ -164,6 +179,7 @@ namespace Keetzap.ZeldaMaker
                 }
 
                 _colliderTrigger.center -= _pushDirection;
+                _colliderTrigger.size = _colliderSize * triggerShrinkFactor;
                 _objectIsPushed = true;
             }
         }
@@ -181,6 +197,7 @@ namespace Keetzap.ZeldaMaker
         {
             InitializeTimeThreshold();
             _colliderTrigger.center = _colliderCenter;
+            _colliderTrigger.size = _colliderSize;
             _objectIsPushed = false;
         }
 

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: -8443926077972364391}
   - component: {fileID: 3209677214499305993}
   - component: {fileID: 1131099322654094660}
-  m_Layer: 12
+  m_Layer: 8
   m_Name: PRF_PRP_LOG_DragableByPath_BASE
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -137,7 +137,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7922401027480424263}
-  m_Layer: 12
+  m_Layer: 8
   m_Name: Visual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
