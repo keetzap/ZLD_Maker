@@ -77,7 +77,7 @@ MonoBehaviour:
   showHintMessage: 1
   hintMessage: Type your hint HERE!!
   interactFeedback: {fileID: 2125285137688546093}
-  pauseCharacter: 0
+  pauseCharacter: 1
   hideWeapons: 0
   destroyAfterInteraction: 0
   message: Type the message HERE!

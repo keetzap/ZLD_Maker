@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2849053092817255639}
   - component: {fileID: 4479030268386536494}
   m_Layer: 0
-  m_Name: PRF_FDB_Rupee
+  m_Name: PRF_FDB_GenericCollectableAwake
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

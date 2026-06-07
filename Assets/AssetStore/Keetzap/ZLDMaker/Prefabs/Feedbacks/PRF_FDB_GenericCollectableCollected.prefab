@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5052048790262782216}
   - component: {fileID: 6834587674858988964}
   m_Layer: 0
-  m_Name: PRF_FDB_GenericItemCollected
+  m_Name: PRF_FDB_GenericCollectableCollected
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
