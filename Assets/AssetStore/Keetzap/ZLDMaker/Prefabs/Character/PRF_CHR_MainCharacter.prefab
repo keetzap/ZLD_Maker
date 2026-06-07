@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 4711280973224411059}
   - component: {fileID: 6049454260128184369}
   - component: {fileID: 5090299732998084678}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: PRF_CHR_MainCharacter
   m_TagString: Player
   m_Icon: {fileID: 0}
