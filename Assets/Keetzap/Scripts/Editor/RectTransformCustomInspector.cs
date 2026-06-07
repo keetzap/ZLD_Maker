@@ -1,9 +1,3 @@
-//-----------------------------------------------------------------------
-// RectTransformEditor.cs
-//
-// Copyright 2025 Social Point SL. All rights reserved.
-//
-//-----------------------------------------------------------------------
 using System;
 using System.Reflection;
 using UnityEditor;
@@ -41,7 +35,6 @@ namespace Keetzap.EditorTools
             EditorPrefs.SetBool(PrefKey, _showUtilities);
             Menu.SetChecked(MenuPath, _showUtilities);
 
-            // Force all RectTransform inspectors to repaint.
             foreach (var editor in ActiveEditorTracker.sharedTracker.activeEditors)
             {
                 if (editor.target is RectTransform)
