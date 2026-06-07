@@ -52,7 +52,7 @@ namespace Keetzap.ZeldaMaker
             EditorGUI.BeginDisabledGroup(true);
             {
                 string amount = collectable.GameDataAsset() == null ? "-" : collectable.GameDataAsset().amount.ToString();
-                EditorGUILayout.LabelField(string.Format($"Collect amount: {amount} ***"));
+                EditorGUILayout.LabelField(string.Format($"Collect amount: {amount}"));
             }
             EditorGUI.EndDisabledGroup();
             Decorators.Separator();

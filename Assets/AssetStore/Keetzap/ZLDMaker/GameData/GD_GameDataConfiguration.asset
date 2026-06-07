@@ -16,4 +16,7 @@ MonoBehaviour:
   leftWeapon: {fileID: 11400000, guid: 5b147a5b511b5314ea13ce7c0bc2e45b, type: 2}
   collectables:
   - {fileID: 11400000, guid: 690effff304616344813bb24879f4565, type: 2}
-  keys: []
+  keys:
+  - {fileID: 11400000, guid: 41e4dd2bf641177479bce057544e9d50, type: 2}
+  - {fileID: 11400000, guid: f6a1492afd4dfa447a96fbe946615ea0, type: 2}
+  - {fileID: 11400000, guid: a663f050777514144b1b185ee7433ea4, type: 2}
