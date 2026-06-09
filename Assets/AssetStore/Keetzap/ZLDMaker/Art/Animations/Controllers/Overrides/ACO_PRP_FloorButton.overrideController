@@ -6,7 +6,7 @@ AnimatorOverrideController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: ACO_FloorButton
+  m_Name: ACO_PRP_FloorButton
   m_Controller: {fileID: 9100000, guid: 548fb0515840086429b34e9fbf271591, type: 2}
   m_Clips:
   - m_OriginalClip: {fileID: 7400000, guid: ee0faaf07f5fca243b50857b096d0809, type: 2}
