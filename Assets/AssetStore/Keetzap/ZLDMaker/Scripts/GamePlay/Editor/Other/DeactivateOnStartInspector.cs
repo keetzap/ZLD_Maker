@@ -20,7 +20,7 @@ namespace Keetzap.ZeldaMaker
             
             EditorGUI.BeginChangeCheck();
 
-            Section("DEACTIVATE ON AWAKE PROPERTIES ***", SectionProperties);
+            Section("DEACTIVATE ON AWAKE PROPERTIES", SectionProperties);
 
             if (EditorGUI.EndChangeCheck())
                 Undo.RegisterCompleteObjectUndo(deactivateOnAwake, "Deactivate on Awake");
@@ -33,7 +33,8 @@ namespace Keetzap.ZeldaMaker
 
         private void SectionProperties()
         {
-            EditorGUILayout.HelpBox(NO_PROPERTIES, MessageType.Info, true);
+            var message = $"This component will simply deactivate the GameObject it's attached to when the scene starts.\n{NO_PROPERTIES}";
+            EditorGUILayout.HelpBox(message, MessageType.Info, true);
         }
     }
 }

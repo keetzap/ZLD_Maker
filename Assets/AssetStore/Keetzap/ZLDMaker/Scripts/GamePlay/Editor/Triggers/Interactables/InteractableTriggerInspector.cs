@@ -31,9 +31,9 @@ namespace Keetzap.ZeldaMaker
             InitInspector();
 
             Section("COMMON PROPERTIES", SectionCommonProperties);
+            Section("TRIGGER LISTENERS", SectionListeners);
             Section("TRIGGER PROPERTIES", SectionTriggerProperties);
             Section("TRIGGER FEEDBACK", SectionInteractableFeedback);
-            Section("TRIGGER LISTENERS", SectionListeners);
             Section("DEBUG", SectionDebug);
 
             EndInspector(trigger, "Trigger asset");
@@ -41,14 +41,12 @@ namespace Keetzap.ZeldaMaker
 
         private void SectionTriggerProperties()
         {
-            EditorGUILayout.PropertyField(keyIsRequired, new GUIContent("Key needed ***"));
+            EditorGUILayout.PropertyField(keyIsRequired, new GUIContent("Key needed"));
             EditorGUI.BeginDisabledGroup(keyIsRequired.boolValue == false);
             {
                 EditorGUI.indentLevel++;
                 EditorGUILayout.PropertyField(key, new GUIContent("Key Type"));
-                EditorGUILayout.PropertyField(showAdditionalInfo, new GUIContent("Display text on interaction ***"));
-                //GUILayout.Space(5);
-                //EditorGUILayout.LabelField("Text: ***");
+                EditorGUILayout.PropertyField(showAdditionalInfo, new GUIContent("Display text on interaction"));
                 EditorGUI.BeginDisabledGroup(showAdditionalInfo.boolValue == false);
                 {
                     GUILayout.Space(2);
