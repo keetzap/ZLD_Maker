@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7174776559023299214}
   m_Layer: 0
-  m_Name: VisualFrame
+  m_Name: Visual_Frame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -157,7 +157,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1797422054494762336}
   m_Layer: 0
-  m_Name: VisualButton
+  m_Name: Visual_Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
