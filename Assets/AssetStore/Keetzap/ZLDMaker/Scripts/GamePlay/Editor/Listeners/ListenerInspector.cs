@@ -11,6 +11,7 @@ namespace Keetzap.ZeldaMaker
         private Listener listener;
 
         private SerializedProperty initialState;
+        private SerializedProperty animator;
         private SerializedProperty hasCooldown;
         private SerializedProperty cooldown;
         private SerializedProperty loopBehavior;
@@ -29,6 +30,7 @@ namespace Keetzap.ZeldaMaker
             listener = (Listener)target;
 
             initialState = serializedObject.FindProperty(Listener.Fields.InitialState);
+            animator = serializedObject.FindProperty("_animator");
             hasCooldown = serializedObject.FindProperty(Listener.Fields.HasCooldown);
             cooldown = serializedObject.FindProperty(Listener.Fields.Cooldown);
             loopBehavior = serializedObject.FindProperty(Listener.Fields.LoopBehavior);
@@ -56,6 +58,7 @@ namespace Keetzap.ZeldaMaker
 
         protected void SectionMainProperties()
         {
+            EditorGUILayout.PropertyField(animator);
             EditorGUILayout.PropertyField(initialState);
             EditorGUI.BeginDisabledGroup(true);
             if (Application.isPlaying)

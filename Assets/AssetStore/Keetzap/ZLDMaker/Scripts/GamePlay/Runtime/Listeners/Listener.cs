@@ -5,7 +5,6 @@ using UnityEngine;
 
 namespace Keetzap.ZeldaMaker
 {
-    [RequireComponent(typeof(Animator))]
     public class Listener : MonoBehaviour, IListener
     {
         public static class Fields
@@ -55,10 +54,11 @@ namespace Keetzap.ZeldaMaker
         [SerializeField] private FeedbackSystem triggerFeedback;
         [SerializeField] private FeedbackSystem cooldownFeedback;
         [SerializeField] private FeedbackSystem releaseFeedback;
+        [SerializeField] private Animator _animator;
 
         private Trigger _trigger;
         protected TypeOfState _state;
-        protected Animator _animator => GetComponent<Animator>();
+        protected Animator Animator => _animator;
         private Coroutine _startDelayOnTrigger;
         private Coroutine _startDelayOnRelease;
         private Coroutine _startCountdown;
@@ -79,7 +79,7 @@ namespace Keetzap.ZeldaMaker
         private void InitState()
         {
             _state = initialState;
-            _animator.SetFloat(INITSTATE, (int)_state);
+            Animator.SetFloat(INITSTATE, (int)_state);
 
             if (_state == TypeOfState.Enabled)
             {
@@ -197,9 +197,9 @@ namespace Keetzap.ZeldaMaker
         {
             _state = typeOfState;
 
-            if (!_animator.GetCurrentAnimatorStateInfo(0).IsName(trigger))
+            if (!Animator.GetCurrentAnimatorStateInfo(0).IsName(trigger))
             {
-                _animator.SetTrigger(trigger);
+                Animator.SetTrigger(trigger);
             }
         }
         
