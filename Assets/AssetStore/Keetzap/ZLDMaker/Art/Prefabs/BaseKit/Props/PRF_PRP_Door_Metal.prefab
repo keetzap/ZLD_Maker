@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5421741461168414861}
   - component: {fileID: 2343376901249581609}
   - component: {fileID: 2599655684787029063}
+  - component: {fileID: 9079289828270910388}
   m_Layer: 0
   m_Name: MSH_PRP_Door_Metal
   m_TagString: Untagged
@@ -26,12 +27,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7855835548855188553}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4885775628776531609}
+  m_Father: {fileID: 6832517615199203349}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &2343376901249581609
 MeshFilter:
@@ -91,6 +92,28 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &9079289828270910388
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7855835548855188553}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 8003953137812695075, guid: 4b4e7e6cfbb4c784290873b1b45bb5f8, type: 3}
 --- !u!1001 &756911428268118830
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -146,13 +169,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 5281831635764295095, guid: a992853742531594f8a867103d550966, type: 3}
+    - targetCorrespondingSourceObject: {fileID: 6075615919337825083, guid: a992853742531594f8a867103d550966, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5421741461168414861}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a992853742531594f8a867103d550966, type: 3}
---- !u!4 &4885775628776531609 stripped
+--- !u!4 &6832517615199203349 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 5281831635764295095, guid: a992853742531594f8a867103d550966, type: 3}
+  m_CorrespondingSourceObject: {fileID: 6075615919337825083, guid: a992853742531594f8a867103d550966, type: 3}
   m_PrefabInstance: {fileID: 756911428268118830}
   m_PrefabAsset: {fileID: 0}

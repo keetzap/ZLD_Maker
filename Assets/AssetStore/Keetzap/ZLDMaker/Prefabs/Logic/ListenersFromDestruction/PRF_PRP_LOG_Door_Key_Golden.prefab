@@ -62,6 +62,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4885775628776531609, guid: 5000ad59900aaed4d9b87c1a7154519e, type: 3}
   m_PrefabInstance: {fileID: 786307677075120959}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &7619928226221857810 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7158166987449089837, guid: 5000ad59900aaed4d9b87c1a7154519e, type: 3}
+  m_PrefabInstance: {fileID: 786307677075120959}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8126257144883699850
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -70,6 +75,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2697961819744233631, guid: 19143a620efd4ab44ba684389b55f0c4, type: 3}
+      propertyPath: _animator
+      value: 
+      objectReference: {fileID: 7619928226221857810}
     - target: {fileID: 3450129425176001797, guid: 19143a620efd4ab44ba684389b55f0c4, type: 3}
       propertyPath: m_Name
       value: PRF_PRP_LOG_Door_Key_Golden

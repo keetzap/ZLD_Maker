@@ -62,6 +62,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4885775628776531609, guid: cbe44d9ba60782442b91e1e1a1fc2438, type: 3}
   m_PrefabInstance: {fileID: 5698663321236206639}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &3189484126570826498 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7158166987449089837, guid: cbe44d9ba60782442b91e1e1a1fc2438, type: 3}
+  m_PrefabInstance: {fileID: 5698663321236206639}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8126257144883699850
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -70,6 +75,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2697961819744233631, guid: 19143a620efd4ab44ba684389b55f0c4, type: 3}
+      propertyPath: _animator
+      value: 
+      objectReference: {fileID: 3189484126570826498}
     - target: {fileID: 3450129425176001797, guid: 19143a620efd4ab44ba684389b55f0c4, type: 3}
       propertyPath: m_Name
       value: PRF_PRP_LOG_Door_Key_Silver
