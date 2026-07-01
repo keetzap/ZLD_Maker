@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 7779041380134915252}
   - component: {fileID: 5052048790262782216}
-  - component: {fileID: 6834587674858988964}
+  - component: {fileID: -4046290182280001894}
   m_Layer: 0
-  m_Name: PRF_FDB_Chest_Open
+  m_Name: PRF_FDB_Chest_EndAction
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -50,9 +50,9 @@ MonoBehaviour:
   _feedbackPlayerSettings:
     _timeScale: 0
   _feedbacks:
-  - {fileID: 6834587674858988964}
+  - {fileID: -4046290182280001894}
   totalDuration: 0
---- !u!114 &6834587674858988964
+--- !u!114 &-4046290182280001894
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -61,10 +61,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 5166025830573047338}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a2b2c6e7aa484e4419d88c93d1348215, type: 3}
+  m_Script: {fileID: 11500000, guid: fd22ba0391a96cf4eae91128ed6a573f, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: 
-  _displayLabel: Play Sound
+  m_EditorClassIdentifier: Assembly-CSharp::Keetzap.Feedback.ObjectVisibility
+  _displayLabel: Object Visibility
   _displayColor: {r: 0, g: 0, b: 0, a: 1}
   _expanded: 1
   _delay: 0
@@ -73,11 +73,5 @@ MonoBehaviour:
   _childControlsDuration:
     childControlsDuration: 1
     message: 
-  clip: {fileID: 8300000, guid: 4388951f17528be4d9ad8e6da8d40e8f, type: 3}
-  playRandomSound: 0
-  randomClips: []
-  loop: 0
-  minVolume: 1
-  maxVolume: 1
-  minPitch: 1
-  maxPitch: 1
+  objectToEnable: {fileID: 0}
+  visibility: 1
