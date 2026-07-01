@@ -38,7 +38,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: ANI_PRP_Chest
+    path: ANI_PRP_Chest_Body/ANI_PRP_Chest_Lid
   m_PositionCurves: []
   m_ScaleCurves: []
   m_FloatCurves: []
@@ -51,7 +51,7 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
-      path: 349969691
+      path: 3354800211
       attribute: 4
       script: {fileID: 0}
       typeID: 4
@@ -107,7 +107,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.x
-    path: ANI_PRP_Chest
+    path: ANI_PRP_Chest_Body/ANI_PRP_Chest_Lid
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -128,7 +128,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.y
-    path: ANI_PRP_Chest
+    path: ANI_PRP_Chest_Body/ANI_PRP_Chest_Lid
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -149,7 +149,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.z
-    path: ANI_PRP_Chest
+    path: ANI_PRP_Chest_Body/ANI_PRP_Chest_Lid
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -162,7 +162,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: ANI_PRP_Chest
+    path: ANI_PRP_Chest_Body/ANI_PRP_Chest_Lid
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -174,7 +174,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: ANI_PRP_Chest
+    path: ANI_PRP_Chest_Body/ANI_PRP_Chest_Lid
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -186,7 +186,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: ANI_PRP_Chest
+    path: ANI_PRP_Chest_Body/ANI_PRP_Chest_Lid
     classID: 4
     script: {fileID: 0}
     flags: 0
