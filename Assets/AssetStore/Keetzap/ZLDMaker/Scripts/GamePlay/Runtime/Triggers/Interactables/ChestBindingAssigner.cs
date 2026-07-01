@@ -8,7 +8,7 @@ namespace Keetzap.ZeldaMaker
     [RequireComponent(typeof(PlayableDirector))]
     public class ChestBindingAssigner : MonoBehaviour
     {
-        private readonly string CHARACTER = "Character Track";
+        private readonly string CHARACTER = "Main Character Track";
         private readonly string CINEMACHINE = "Cinemachine Track";
 
         void Start()
