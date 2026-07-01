@@ -114,16 +114,115 @@ PrefabInstance:
       propertyPath: m_Name
       value: PRF_PRP_LOG_Chest
       objectReference: {fileID: 0}
+    - target: {fileID: 6487802728140442295, guid: 73c6d72a19a6ece4f8d4d7bbf0a13290, type: 3}
+      propertyPath: Lens.FieldOfView
+      value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 6487802728140442295, guid: 73c6d72a19a6ece4f8d4d7bbf0a13290, type: 3}
+      propertyPath: m_StreamingVersion
+      value: 20241001
+      objectReference: {fileID: 0}
+    - target: {fileID: 8248890201723323520, guid: 73c6d72a19a6ece4f8d4d7bbf0a13290, type: 3}
+      propertyPath: debugColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8248890201723323520, guid: 73c6d72a19a6ece4f8d4d7bbf0a13290, type: 3}
+      propertyPath: debugColor.g
+      value: 0.22779632
+      objectReference: {fileID: 0}
+    - target: {fileID: 8808375096170652981, guid: 73c6d72a19a6ece4f8d4d7bbf0a13290, type: 3}
+      propertyPath: m_PlayableAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 37bc04d461c1112448e47a64fc31ea5c, type: 2}
+    - target: {fileID: 8808375096170652981, guid: 73c6d72a19a6ece4f8d4d7bbf0a13290, type: 3}
+      propertyPath: m_SceneBindings.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8808375096170652981, guid: 73c6d72a19a6ece4f8d4d7bbf0a13290, type: 3}
+      propertyPath: m_SceneBindings.Array.data[0].key
+      value: 
+      objectReference: {fileID: 4855867337124757079, guid: 37bc04d461c1112448e47a64fc31ea5c, type: 2}
+    - target: {fileID: 8808375096170652981, guid: 73c6d72a19a6ece4f8d4d7bbf0a13290, type: 3}
+      propertyPath: m_SceneBindings.Array.data[1].key
+      value: 
+      objectReference: {fileID: 685144169721411382, guid: 37bc04d461c1112448e47a64fc31ea5c, type: 2}
+    - target: {fileID: 8808375096170652981, guid: 73c6d72a19a6ece4f8d4d7bbf0a13290, type: 3}
+      propertyPath: m_SceneBindings.Array.data[2].key
+      value: 
+      objectReference: {fileID: 108974320726721617, guid: 37bc04d461c1112448e47a64fc31ea5c, type: 2}
+    - target: {fileID: 8808375096170652981, guid: 73c6d72a19a6ece4f8d4d7bbf0a13290, type: 3}
+      propertyPath: m_SceneBindings.Array.data[3].key
+      value: 
+      objectReference: {fileID: -6203667952372890103, guid: 37bc04d461c1112448e47a64fc31ea5c, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 3532915048224983406, guid: 73c6d72a19a6ece4f8d4d7bbf0a13290, type: 3}
       insertIndex: 0
       addedObject: {fileID: 6781751595096181745}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3167972200658243537, guid: 73c6d72a19a6ece4f8d4d7bbf0a13290, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 763191995974584520}
+    - targetCorrespondingSourceObject: {fileID: 3167972200658243537, guid: 73c6d72a19a6ece4f8d4d7bbf0a13290, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8393722190549659867}
   m_SourcePrefab: {fileID: 100100000, guid: 73c6d72a19a6ece4f8d4d7bbf0a13290, type: 3}
 --- !u!4 &7521302785201242804 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3532915048224983406, guid: 73c6d72a19a6ece4f8d4d7bbf0a13290, type: 3}
   m_PrefabInstance: {fileID: 6441949069538921434}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &8255242576878797835 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3167972200658243537, guid: 73c6d72a19a6ece4f8d4d7bbf0a13290, type: 3}
+  m_PrefabInstance: {fileID: 6441949069538921434}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &763191995974584520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8255242576878797835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b617507da6d07e749b7efdb34e1173e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineFollow
+  TrackerSettings:
+    BindingMode: 4
+    PositionDamping: {x: 1, y: 1, z: 1}
+    AngularDampingMode: 0
+    RotationDamping: {x: 1, y: 1, z: 1}
+    QuaternionDamping: 1
+  FollowOffset: {x: 0, y: 0, z: -10}
+--- !u!114 &8393722190549659867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8255242576878797835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f38bda98361e1de48a4ca2bd86ea3c17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineRotationComposer
+  Composition:
+    ScreenPosition: {x: 0, y: 0}
+    DeadZone:
+      Enabled: 0
+      Size: {x: 0.2, y: 0.2}
+    HardLimits:
+      Enabled: 0
+      Size: {x: 0.8, y: 0.8}
+      Offset: {x: 0, y: 0}
+  CenterOnActivate: 1
+  TargetOffset: {x: 0, y: 0, z: 0}
+  Damping: {x: 0.5, y: 0.5}
+  Lookahead:
+    Enabled: 0
+    Time: 0
+    Smoothing: 0
+    IgnoreY: 0
