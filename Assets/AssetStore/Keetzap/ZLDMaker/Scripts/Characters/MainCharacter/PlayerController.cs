@@ -27,7 +27,7 @@ namespace Keetzap.ZeldaMaker
         [SerializeField] private float playerSpeed = 2.5f;
         [SerializeField] private float gravity = Physics.gravity.y;
         [SerializeField] private float pushSpeed = 1.5f;
-        [SerializeField] private GameObject mainCharacterModel;
+        [SerializeField] private Animator animatorController;
         //[SerializeField] private Transform headPosition;
         //[SerializeField] private Vector3 bombForce = new(0, 20, 50);
 
@@ -61,7 +61,7 @@ namespace Keetzap.ZeldaMaker
         //private float _factorForceMultiplier = 10f;
         public bool IsInteracting { get; set; }
         
-        public Animator MainCharacterAnimator => mainCharacterModel.GetComponent<Animator>();
+        public Animator MainCharacterAnimator => animatorController;
         public Vector3 Position => transform.position;
         public float PushSpeed => pushSpeed;
 
