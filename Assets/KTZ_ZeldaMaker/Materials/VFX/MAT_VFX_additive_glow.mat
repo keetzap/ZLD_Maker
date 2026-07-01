@@ -22,7 +22,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: MAT_VFX_additive_glow
   m_Shader: {fileID: -6465566751694194690, guid: 9752a899eb586fe44bc1f00caec50564, type: 3}
-  m_Parent: {fileID: 2100000, guid: b11099f0e771caf4e8bcd98dc892f61e, type: 2}
+  m_Parent: {fileID: 2100000, guid: 87895c06f8d7f7d458d4c347d2fe14e2, type: 2}
   m_ModifiedSerializedProperties: 2
   m_ValidKeywords: []
   m_InvalidKeywords:
