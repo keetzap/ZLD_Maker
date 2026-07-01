@@ -13,7 +13,7 @@ namespace Keetzap.ZeldaMaker
         private SerializedProperty openingTimeline;
         private SerializedProperty closingTimeline;
         private SerializedProperty dialogMessage;
-        private SerializedProperty closingFeedback;
+        private SerializedProperty exitFeedback;
 
         protected override void OnEnable()
         {
@@ -23,7 +23,7 @@ namespace Keetzap.ZeldaMaker
             timeToRepositioning = serializedObject.FindProperty(InteractableTimeline.Fields.TimeToRepositioning);
             openingTimeline = serializedObject.FindProperty(InteractableTimeline.Fields.OpeningTimeline);
             closingTimeline = serializedObject.FindProperty(InteractableTimeline.Fields.ClosingTimeline);
-            closingFeedback = serializedObject.FindProperty(InteractableTimeline.Fields.ClosingFeedback);
+            exitFeedback = serializedObject.FindProperty(InteractableTimeline.Fields.ExitFeedback);
             dialogMessage = serializedObject.FindProperty(InteractableTimeline.Fields.DialogMessage);
         }
 
@@ -36,20 +36,18 @@ namespace Keetzap.ZeldaMaker
             GUILayout.Space(2);
             EditorGUILayout.PropertyField(openingTimeline);
             EditorGUILayout.PropertyField(closingTimeline);
-            //EditorGUILayout.PropertyField(closingFeedback);
             GUILayout.Space(2);
             Decorators.SeparatorSimple();
             GUILayout.Space(2);
-            EditorGUILayout.LabelField("Dialog text: ***");
-            //EditorGUI.indentLevel++;
+            EditorGUILayout.LabelField("Dialog text:");
             GUILayout.Space(2);
             dialogMessage.stringValue = EditorGUILayout.TextArea(dialogMessage.stringValue, GUILayout.MinHeight(40));
-            //EditorGUI.indentLevel--;
         }
 
         protected void SectionInteractableTimelineFeedback()
         {
-            EditorGUILayout.PropertyField(closingFeedback, new GUIContent("On Closing ***"));
+            SectionInteractableFeedback();
+            EditorGUILayout.PropertyField(exitFeedback, new GUIContent("On Exit Feedback"));
         }
     }
 }
