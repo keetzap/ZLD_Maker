@@ -59,7 +59,7 @@ namespace Keetzap.ZeldaMaker
 
         protected void SectionInteractableFeedback()
         {
-            EditorGUILayout.PropertyField(interactFeedback, new GUIContent("Interaction Feedback"));
+            EditorGUILayout.PropertyField(interactFeedback, new GUIContent("On Interaction Feedback"));
         }
     }
 }

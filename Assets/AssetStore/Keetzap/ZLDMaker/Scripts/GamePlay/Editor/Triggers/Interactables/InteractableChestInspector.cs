@@ -9,8 +9,8 @@ namespace Keetzap.ZeldaMaker
         private InteractableChest chest;
 
         private SerializedProperty drop;
-        private SerializedProperty defaultGettingItemPosition;
-        private SerializedProperty dropAnchorPosition;
+        private SerializedProperty gettingItemPosition;
+        private SerializedProperty collectableAnchorPosition;
 
         protected override void OnEnable()
         {
@@ -19,8 +19,8 @@ namespace Keetzap.ZeldaMaker
             chest = (InteractableChest)target;
 
             drop = serializedObject.FindProperty(InteractableChest.Fields.Drop);
-            defaultGettingItemPosition = serializedObject.FindProperty(InteractableChest.Fields.DefaultGettingItemPosition);
-            dropAnchorPosition = serializedObject.FindProperty(InteractableChest.Fields.DropAnchorPosition);
+            gettingItemPosition = serializedObject.FindProperty(InteractableChest.Fields.GettingItemPosition);
+            collectableAnchorPosition = serializedObject.FindProperty(InteractableChest.Fields.CollectableAnchorPosition);
         }
 
         public override void OnInspectorGUI()
@@ -29,8 +29,8 @@ namespace Keetzap.ZeldaMaker
 
             Section("COMMON PROPERTIES", SectionCommonProperties);
             Section("CHEST PROPERTIES", SectionChestProperties);
-            Section("CHEST TIMELINE PROPERTIES", SectionTimelineProperties);
-            Section("CHEST TIMELINE FEEDBACK", SectionInteractableTimelineFeedback);
+            Section("TIMELINE PROPERTIES", SectionTimelineProperties);
+            Section("FEEDBACKS", SectionInteractableTimelineFeedback);
             Section("DEBUG", SectionDebug);
 
             EndInspector(chest, "Interactable Chest Asset");
@@ -39,8 +39,8 @@ namespace Keetzap.ZeldaMaker
         private void SectionChestProperties()
         {
             EditorGUILayout.PropertyField(drop);
-            EditorGUILayout.PropertyField(dropAnchorPosition);
-            EditorGUILayout.PropertyField(defaultGettingItemPosition);
+            EditorGUILayout.PropertyField(collectableAnchorPosition);
+            EditorGUILayout.PropertyField(gettingItemPosition);
         }
     }
 }

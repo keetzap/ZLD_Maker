@@ -7,13 +7,13 @@ namespace Keetzap.ZeldaMaker
         new public static class Fields
         {
             public static string Drop => nameof(drop);
-            public static string DefaultGettingItemPosition => nameof(defaultGettingItemPosition);
-            public static string DropAnchorPosition => nameof(dropAnchorPosition);
+            public static string GettingItemPosition => nameof(gettingItemPosition);
+            public static string CollectableAnchorPosition => nameof(collectableAnchorPosition);
         }
 
         [SerializeField] private GameObject drop;
-        [SerializeField] private Transform defaultGettingItemPosition;
-        [SerializeField] private Transform dropAnchorPosition;
+        [SerializeField] private Transform gettingItemPosition;
+        [SerializeField] private Transform collectableAnchorPosition;
 
         public override void OnInteract()
         {
@@ -26,14 +26,14 @@ namespace Keetzap.ZeldaMaker
 
             drop.GetComponent<Collectable>().autodestroyObject = false;
             GameManager.Instance.AddCollectable(drop.GetComponent<Collectable>().configurationFile);
-            Instantiate(drop, dropAnchorPosition.transform.position, dropAnchorPosition.transform.rotation, dropAnchorPosition.transform);
+            Instantiate(drop, collectableAnchorPosition.transform.position, collectableAnchorPosition.transform.rotation, collectableAnchorPosition.transform);
 
             OnInteractEnd();
         }
 
         public void SetGettingItemPosition()
         {
-            PlayerController.Instance.MoveToTargetPosition(defaultGettingItemPosition, _timeToRepositioning);
+            PlayerController.Instance.MoveToTargetPosition(gettingItemPosition, _timeToRepositioning);
         }
     }
 }

@@ -13,7 +13,7 @@ namespace Keetzap.ZeldaMaker
             public static string OpeningTimeline => nameof(openingTimeline);
             public static string ClosingTimeline => nameof(closingTimeline);
             public static string DialogMessage => nameof(dialogMessage);
-            public static string ClosingFeedback => nameof(closingFeedback);
+            public static string ExitFeedback => nameof(exitFeedback);
         }
 
         [SerializeField] private Transform defaultInitialPosition;
@@ -21,7 +21,7 @@ namespace Keetzap.ZeldaMaker
         [SerializeField] private PlayableDirector openingTimeline;
         [SerializeField] private PlayableDirector closingTimeline;
         [SerializeField] private string dialogMessage;
-        [SerializeField] private FeedbackSystem closingFeedback;
+        [SerializeField] private FeedbackSystem exitFeedback;
 
         private bool isWaitingForClosing;
         protected float _timeToRepositioning => timeToRepositioning;
@@ -59,9 +59,9 @@ namespace Keetzap.ZeldaMaker
                 openingTimeline.Stop();
                 closingTimeline.Play();
 
-                if (closingFeedback != null)
+                if (exitFeedback != null)
                 {
-                    closingFeedback.Play();
+                    exitFeedback.Play();
                 }
             }
         }
