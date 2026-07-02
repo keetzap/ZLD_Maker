@@ -76,7 +76,7 @@ GameObject:
   - component: {fileID: 5799289302238640641}
   - component: {fileID: 7239038662822491431}
   m_Layer: 0
-  m_Name: PRF_Collectable_BASE
+  m_Name: PRF_Collectable_Hitable_BASE
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -48,17 +48,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7239038662822491431, guid: 4e5fee6eb7ede974aab41dd7a9c14497, type: 3}
-      propertyPath: autodestroyObject
-      value: 0
+    - target: {fileID: 5799289302238640641, guid: 4e5fee6eb7ede974aab41dd7a9c14497, type: 3}
+      propertyPath: m_Radius
+      value: 0.4
       objectReference: {fileID: 0}
-    - target: {fileID: 7239038662822491431, guid: 4e5fee6eb7ede974aab41dd7a9c14497, type: 3}
-      propertyPath: configurationFile
-      value: 
-      objectReference: {fileID: 11400000, guid: a663f050777514144b1b185ee7433ea4, type: 2}
+    - target: {fileID: 5799289302238640641, guid: 4e5fee6eb7ede974aab41dd7a9c14497, type: 3}
+      propertyPath: m_Center.y
+      value: 0.06
+      objectReference: {fileID: 0}
     - target: {fileID: 7339713052814680107, guid: 4e5fee6eb7ede974aab41dd7a9c14497, type: 3}
       propertyPath: m_Name
-      value: PRF_CLL_Key_BASE
+      value: PRF_CLL_HIT_Heart_BASE
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
