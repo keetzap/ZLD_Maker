@@ -26592,6 +26592,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PRF_LOG_Trigger_ByProximity_Exit
       objectReference: {fileID: 0}
+    - target: {fileID: 4008745169323167414, guid: 9704e2e36263606468bcaa48ca9262aa, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4008745169323167415, guid: 9704e2e36263606468bcaa48ca9262aa, type: 3}
       propertyPath: m_Size.x
       value: 2
@@ -79340,14 +79344,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 828990907}
     m_Modifications:
+    - target: {fileID: 1805176560610061752, guid: 84ac71611d2187442959818be8fa9fd2, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1805176560610061752, guid: 84ac71611d2187442959818be8fa9fd2, type: 3}
+      propertyPath: objectToEnable
+      value: 
+      objectReference: {fileID: 375487713}
     - target: {fileID: 2225763088529524067, guid: 84ac71611d2187442959818be8fa9fd2, type: 3}
       propertyPath: m_Name
-      value: PRF_PRP_LOG_Chest
+      value: PRF_PRP_LOG_Chest_SilverKey
       objectReference: {fileID: 0}
+    - target: {fileID: 2547846579623079663, guid: 84ac71611d2187442959818be8fa9fd2, type: 3}
+      propertyPath: m_SceneBindings.Array.data[0].value
+      value: 
+      objectReference: {fileID: 1788930824}
     - target: {fileID: 3107368720036384602, guid: 84ac71611d2187442959818be8fa9fd2, type: 3}
       propertyPath: drop
       value: 
-      objectReference: {fileID: 8871718933015332449, guid: dc1f03d4f68f0b94eb398c2042585b95, type: 3}
+      objectReference: {fileID: 5997426907456727461, guid: fdb1ebe8dd28a194c99d60139d0e569e, type: 3}
     - target: {fileID: 7521302785201242804, guid: 84ac71611d2187442959818be8fa9fd2, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3
@@ -79388,6 +79404,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8566856867685527104, guid: 84ac71611d2187442959818be8fa9fd2, type: 3}
+      propertyPath: m_SceneBindings.Array.data[1].value
+      value: 
+      objectReference: {fileID: 1788930824}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -96478,7 +96498,7 @@ Transform:
   m_GameObject: {fileID: 1788930822}
   serializedVersion: 2
   m_LocalRotation: {x: 0.52621394, y: 0, z: 0, w: 0.8503522}
-  m_LocalPosition: {x: -14, y: 17, z: -3}
+  m_LocalPosition: {x: -14, y: 17, z: 12}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
