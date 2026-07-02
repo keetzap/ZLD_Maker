@@ -11,7 +11,7 @@ namespace Keetzap.ZeldaMaker
             public static string CollectableAnchorPosition => nameof(collectableAnchorPosition);
         }
 
-        [SerializeField] private GameObject drop;
+        [SerializeField] private Collectable drop;
         [SerializeField] private Transform gettingItemPosition;
         [SerializeField] private Transform collectableAnchorPosition;
 
@@ -24,9 +24,9 @@ namespace Keetzap.ZeldaMaker
 
             base.OnInteract();
 
-            drop.GetComponent<Collectable>().autodestroyObject = false;
-            GameManager.Instance.AddCollectable(drop.GetComponent<Collectable>().configurationFile);
-            Instantiate(drop, collectableAnchorPosition.transform.position, collectableAnchorPosition.transform.rotation, collectableAnchorPosition.transform);
+            drop.autodestroyObject = false;
+            GameManager.Instance.AddCollectable(drop.configurationFile);
+            Instantiate(drop.gameObject, collectableAnchorPosition.transform.position, collectableAnchorPosition.transform.rotation, collectableAnchorPosition.transform);
 
             OnInteractEnd();
         }
