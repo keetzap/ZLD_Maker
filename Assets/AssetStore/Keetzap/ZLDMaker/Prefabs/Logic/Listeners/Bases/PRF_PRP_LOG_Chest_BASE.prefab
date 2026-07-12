@@ -430,6 +430,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 842649910483019108}
   - {fileID: 5634960355482065935}
   - {fileID: 6829948838770415151}
   - {fileID: 5580596248959776402}
@@ -480,6 +481,7 @@ MonoBehaviour:
   pauseCharacter: 1
   hideWeapons: 1
   destroyAfterInteraction: 0
+  initialTimeline: {fileID: 1034694733474434303}
   defaultInitialPosition: {fileID: 1935114538354390821}
   timeToRepositioning: 10
   openingTimeline: {fileID: 3424407398184674714}
@@ -684,8 +686,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2601047101384713578}
-  - component: {fileID: 7850675678612694219}
-  - component: {fileID: 4381075700358493413}
+  - component: {fileID: 1034694733474434303}
   m_Layer: 0
   m_Name: TML_PRP_Chest_Apparition
   m_TagString: Untagged
@@ -708,7 +709,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 5580596248959776402}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!320 &7850675678612694219
+--- !u!320 &1034694733474434303
 PlayableDirector:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -717,42 +718,70 @@ PlayableDirector:
   m_GameObject: {fileID: 6620188394230665587}
   m_Enabled: 1
   serializedVersion: 3
-  m_PlayableAsset: {fileID: 11400000, guid: b0fe9819b943b5d4993ffe29134f2a38, type: 2}
-  m_InitialState: 0
-  m_WrapMode: 0
+  m_PlayableAsset: {fileID: 11400000, guid: 83d82216ee51db743821997cde3c1211, type: 2}
+  m_InitialState: 1
+  m_WrapMode: 2
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
   m_SceneBindings:
-  - key: {fileID: 4461917677142670347, guid: b0fe9819b943b5d4993ffe29134f2a38, type: 2}
-    value: {fileID: 0}
-  - key: {fileID: 4855867337124757079, guid: b0fe9819b943b5d4993ffe29134f2a38, type: 2}
-    value: {fileID: 0}
-  - key: {fileID: 10236045662492030, guid: b0fe9819b943b5d4993ffe29134f2a38, type: 2}
-    value: {fileID: 0}
-  - key: {fileID: 8986411728862693414, guid: b0fe9819b943b5d4993ffe29134f2a38, type: 2}
-    value: {fileID: 7231257453879012116}
-  - key: {fileID: -7366411762670753240, guid: b0fe9819b943b5d4993ffe29134f2a38, type: 2}
-    value: {fileID: 302842199634355271}
-  - key: {fileID: -8431738735489669735, guid: b0fe9819b943b5d4993ffe29134f2a38, type: 2}
-    value: {fileID: 4644829542246196626}
-  - key: {fileID: 4923055982092813965, guid: b0fe9819b943b5d4993ffe29134f2a38, type: 2}
-    value: {fileID: 3005521628467288014}
+  - key: {fileID: -6752032355037959337, guid: 83d82216ee51db743821997cde3c1211, type: 2}
+    value: {fileID: 4156490527599853947}
   m_ExposedReferences:
-    m_References:
-    - 8333126bc8112be43940f927b5458490: {fileID: 6487802728140442295}
-    - c8921a0e660277e41bdd18688a410e28: {fileID: 6487802728140442295}
---- !u!114 &4381075700358493413
-MonoBehaviour:
+    m_References: []
+--- !u!1 &7064073200873882053
+GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6620188394230665587}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 842649910483019108}
+  - component: {fileID: 4156490527599853947}
+  m_Layer: 0
+  m_Name: Visual
+  m_TagString: Untagged
+  m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &842649910483019108
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7064073200873882053}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3532915048224983406}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &4156490527599853947
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7064073200873882053}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: edbc8b0c72ab0914a8209c71f1b2d096, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Keetzap.ZeldaMaker.ChestBindingAssigner
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &554946113422778616
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -6,7 +6,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 7521302785201242804}
+    m_TransformParent: {fileID: 5969476420305186494}
     m_Modifications:
     - target: {fileID: 1036896218229668183, guid: de3ad8574a8e9704995d9f3b54a28c65, type: 3}
       propertyPath: m_Name
@@ -30,7 +30,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7552057257976672741, guid: de3ad8574a8e9704995d9f3b54a28c65, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7552057257976672741, guid: de3ad8574a8e9704995d9f3b54a28c65, type: 3}
       propertyPath: m_LocalRotation.y
@@ -38,7 +38,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7552057257976672741, guid: de3ad8574a8e9704995d9f3b54a28c65, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7552057257976672741, guid: de3ad8574a8e9704995d9f3b54a28c65, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -198,8 +198,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 3532915048224983406, guid: 73c6d72a19a6ece4f8d4d7bbf0a13290, type: 3}
-      insertIndex: 0
+    - targetCorrespondingSourceObject: {fileID: 842649910483019108, guid: 73c6d72a19a6ece4f8d4d7bbf0a13290, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 6660247558640613425}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 3167972200658243537, guid: 73c6d72a19a6ece4f8d4d7bbf0a13290, type: 3}
@@ -240,9 +240,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3d64e441552ce6488fed9312ad76c23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Keetzap.ZeldaMaker.DeactivateOnAwake
---- !u!4 &7521302785201242804 stripped
+--- !u!4 &5969476420305186494 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 3532915048224983406, guid: 73c6d72a19a6ece4f8d4d7bbf0a13290, type: 3}
+  m_CorrespondingSourceObject: {fileID: 842649910483019108, guid: 73c6d72a19a6ece4f8d4d7bbf0a13290, type: 3}
   m_PrefabInstance: {fileID: 6441949069538921434}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &8130025866753039380 stripped

@@ -72,6 +72,6 @@ MonoBehaviour:
   opacity: 0.5
   showDependencyLine: 1
   dependencyLineColor: {r: 0, g: 1, b: 1, a: 1}
-  typeOfTriggerBehaviour: 0
+  typeOfTriggerBehaviour: 1
   oneSingleUse: 0
   canBeEnabledByEnemies: 0

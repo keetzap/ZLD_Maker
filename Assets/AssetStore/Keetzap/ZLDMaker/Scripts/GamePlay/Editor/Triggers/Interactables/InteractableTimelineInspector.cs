@@ -33,12 +33,12 @@ namespace Keetzap.ZeldaMaker
 
         protected void SectionTimelineProperties()
         {
-            EditorGUILayout.PropertyField(initialTimeline);
             EditorGUILayout.PropertyField(defaultInitialPosition);
             EditorGUILayout.PropertyField(timeToRepositioning);
             GUILayout.Space(2);
             Decorators.SeparatorSimple();
             GUILayout.Space(2);
+            EditorGUILayout.PropertyField(initialTimeline);
             EditorGUILayout.PropertyField(openingTimeline);
             EditorGUILayout.PropertyField(closingTimeline);
             GUILayout.Space(2);
