@@ -30,7 +30,7 @@ namespace Keetzap.ZeldaMaker
             Section("COMMON PROPERTIES", SectionCommonProperties);
             Section("CHEST PROPERTIES", SectionChestProperties);
             Section("TIMELINE PROPERTIES", SectionTimelineProperties);
-            Section("FEEDBACKS", SectionInteractableTimelineFeedback);
+            Section("FEEDBACKS & EVENTS", SectionInteractableTimelineFeedback);
             Section("DEBUG", SectionDebug);
 
             EndInspector(chest, "Interactable Chest Asset");
