@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7779041380134915252}
   - component: {fileID: 5052048790262782216}
-  - component: {fileID: -4046290182280001894}
   m_Layer: 0
   m_Name: PRF_FDB_Chest_EndAction
   m_TagString: Untagged
@@ -49,29 +48,5 @@ MonoBehaviour:
   destroyFeedbackAfterPlaying: 0
   _feedbackPlayerSettings:
     _timeScale: 0
-  _feedbacks:
-  - {fileID: -4046290182280001894}
+  _feedbacks: []
   totalDuration: 0
---- !u!114 &-4046290182280001894
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5166025830573047338}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd22ba0391a96cf4eae91128ed6a573f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Keetzap.Feedback.ObjectVisibility
-  _displayLabel: Object Visibility
-  _displayColor: {r: 0, g: 0, b: 0, a: 1}
-  _expanded: 1
-  _delay: 0
-  _duration: 0
-  _ignoreStopCoroutine: 1
-  _childControlsDuration:
-    childControlsDuration: 1
-    message: 
-  objectToEnable: {fileID: 0}
-  visibility: 1
