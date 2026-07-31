@@ -24,7 +24,7 @@ namespace Keetzap.ZeldaMaker
 
         private ReorderableList list;
         private int lineSpace = 6;
-        private bool waypointsFollowEnemy;
+        private Vector3 lastEnemyPosition;
 
         void OnEnable()
         {
@@ -55,6 +55,22 @@ namespace Keetzap.ZeldaMaker
             list.drawElementCallback = DrawListItems;
             list.elementHeightCallback = (int index) => { return (EditorGUIUtility.singleLineHeight + lineSpace) * 2; };
             list.onAddCallback = AddFirstWaypointOnEnemyPosition;
+            
+            Undo.undoRedoPerformed += OnUndoRedo;
+            lastEnemyPosition = enemy.transform.position;
+        }
+
+        private void OnDisable()
+        {
+            Undo.undoRedoPerformed -= OnUndoRedo;
+        }
+
+        private void OnUndoRedo()
+        {
+            if (enemy != null)
+            {
+                lastEnemyPosition = enemy.transform.position;
+            }
         }
 
         public override void OnInspectorGUI()
@@ -71,6 +87,8 @@ namespace Keetzap.ZeldaMaker
 
             if (GUI.changed)
                 EditorUtility.SetDirty(enemy);
+                
+            lastEnemyPosition = enemy.transform.position;
         }
 
         private void SectionBehaviour()
@@ -105,7 +123,7 @@ namespace Keetzap.ZeldaMaker
 
         private void SectionWaypoints()
         {
-            EditorGUI.BeginDisabledGroup(waypointsFollowEnemy);
+            EditorGUI.BeginDisabledGroup(enemy.freezeWaypoints);
             {
                 WaypointsList();
 
@@ -126,9 +144,15 @@ namespace Keetzap.ZeldaMaker
                 EditorGUILayout.BeginHorizontal();
                 {
                     EditorGUILayout.LabelField(GUIContent.none, GUILayout.MaxWidth(12));
-                    waypointsFollowEnemy = GUILayout.Toggle(waypointsFollowEnemy, new GUIContent("Freeze Waypoints"), "Button", GUILayout.Height(30));
-                    (waypointsFollowEnemy ? new System.Action(() => enemy.ConvertWaypointsToEnemyPosition()) : () => enemy.ConvertWaypointsToWorldPosition())();
-                    enemy._waypointsAreInEnemyPosition = waypointsFollowEnemy;
+                    
+                    EditorGUI.BeginChangeCheck();
+                    bool newFreeze = GUILayout.Toggle(enemy.freezeWaypoints, new GUIContent("Freeze Waypoints"), "Button", GUILayout.Height(30));
+                    if (EditorGUI.EndChangeCheck())
+                    {
+                        Undo.RecordObject(enemy, "Toggle Freeze Waypoints");
+                        enemy.freezeWaypoints = newFreeze;
+                    }
+
                     EditorGUILayout.LabelField(GUIContent.none, GUILayout.MaxWidth(10));
                 }
                 EditorGUILayout.EndHorizontal();
@@ -196,7 +220,7 @@ namespace Keetzap.ZeldaMaker
             EditorGUILayout.Space(1);
             EditorGUIUtility.labelWidth = 300;
 
-            bool initPosition = enemy.waypoints.Count > 0 && enemy.waypoints[0].position == enemy.transform.position;
+            bool initPosition = enemy.waypoints.Count > 0 && enemy.waypoints[0].position == Vector3.zero;
             if (initPosition)
             {
                 enemySpawnsOnFirstWaypoint.boolValue = true;
@@ -357,11 +381,23 @@ namespace Keetzap.ZeldaMaker
         public void OnSceneGUI()
         {
             var enemy = (target as EnemyController);
+            if (enemy == null || enemy.Enemy == null) return;
+
+            if (enemy.freezeWaypoints && enemy.transform.position != lastEnemyPosition)
+            {
+                Vector3 delta = enemy.transform.position - lastEnemyPosition;
+                Undo.RecordObject(enemy, "Move Frozen Waypoints");
+                for (int i = 0; i < enemy.waypoints.Count; i++)
+                {
+                    enemy.waypoints[i].position -= delta;
+                }
+                EditorUtility.SetDirty(enemy);
+            }
+            lastEnemyPosition = enemy.transform.position;
+
             var enemyConfig = enemy.Enemy;
             var tr = enemy.transform;
             Vector3 pos = new(tr.position.x, 0.5f, tr.position.z);
-
-            if (enemy.Enemy == null) return;
 
             if (enemy.showUnalertedHandles)
             {
@@ -400,12 +436,12 @@ namespace Keetzap.ZeldaMaker
 
         private void ShowWaypointHandles()
         {
-            EditorGUI.BeginDisabledGroup(waypointsFollowEnemy);
+            EditorGUI.BeginDisabledGroup(enemy.freezeWaypoints);
             {
                 float scaleFactor = 0.65f;
                 Matrix4x4 startMatrix = Handles.matrix;
                 Handles.matrix = Matrix4x4.Scale(Vector3.one * scaleFactor);
-                var waypointOffset = waypointsFollowEnemy ? enemy.transform.position : Vector3.zero;
+                var waypointOffset = Application.isPlaying ? Vector3.zero : enemy.transform.position;
 
                 if (enemy.ThereAreWaypoints)
                 {
@@ -414,14 +450,14 @@ namespace Keetzap.ZeldaMaker
                         EditorGUI.BeginChangeCheck();
 
                         GUIStyle style = new GUIStyle();
-                        style.normal.textColor = waypointsFollowEnemy ? Color.black : Color.yellow;
+                        style.normal.textColor = enemy.freezeWaypoints ? Color.black : Color.yellow;
                         style.fontSize = 16;
 
                         Vector3 waypoint = (enemy.waypoints[i].position + waypointOffset) / scaleFactor;
                         float distLabel = 0.3f;
                         Handles.Label(waypoint + (Vector3.forward * distLabel) + (Vector3.right * distLabel), i.ToString(), style);
                         
-                        if (waypointsFollowEnemy)
+                        if (enemy.freezeWaypoints)
                         {
                             Handles.color = new Color(0.3f, 0.3f, 0.3f);
                             Handles.ArrowHandleCap(0, waypoint, enemy.transform.rotation * Quaternion.LookRotation(Vector3.right), 1, EventType.Repaint);
@@ -435,7 +471,7 @@ namespace Keetzap.ZeldaMaker
                             if (EditorGUI.EndChangeCheck())
                             {
                                 Undo.RecordObject(target, "Move Waypoint enemy");
-                                enemy.waypoints[i].position = (newPosition - waypointOffset) * scaleFactor;
+                                enemy.waypoints[i].position = (newPosition * scaleFactor) - waypointOffset;
                             }
                         }
                     }

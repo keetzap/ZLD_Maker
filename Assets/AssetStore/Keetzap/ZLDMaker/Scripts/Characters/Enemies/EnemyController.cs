@@ -1,4 +1,4 @@
-﻿// Backlog para después del MVP
+// Backlog para después del MVP
 
 // Pathfinding improvements
 // L'enemic busca el punt més proper per fer patrol (Current implementation)
@@ -95,14 +95,14 @@ namespace Keetzap.ZeldaMaker
 		private Vector3 _initOrientation;
 		private Vector3 _targetRotation;
 
-		public bool _waypointsAreInEnemyPosition;
+		public bool freezeWaypoints;
 
 		public GD_Enemy Enemy => GetComponent<IHitable>().GameDataAsset() as GD_Enemy;
 		public bool NoWaypoints => waypoints.Count == 0;
 		public bool OnlyOneWaypoint => waypoints.Count == 1;
         public bool ThereAreWaypoints => waypoints.Count > 0;
 
-        public void Awake()
+		public void Awake()
 		{
 			_attackable = GetComponent<IHitable>();
 			_attackable.OnAttackedEvent += OnAttacked;
@@ -112,7 +112,7 @@ namespace Keetzap.ZeldaMaker
 			_player = FindAnyObjectByType<PlayerController>();
 			_initOrientation = transform.forward;
 
-			if (_waypointsAreInEnemyPosition)
+			if (ThereAreWaypoints)
 			{
 				ConvertWaypointsToWorldPosition();
 			}
@@ -486,7 +486,7 @@ namespace Keetzap.ZeldaMaker
         {
 			if (waypoints.Count > 0)
             {
-				waypoints[0].position = transform.position;
+				waypoints[0].position = Vector3.zero;
             }
         }
 
@@ -494,14 +494,19 @@ namespace Keetzap.ZeldaMaker
 		{
 			if (waypoints.Count > 0)
 			{
-				transform.position = waypoints[0].position;
+                Vector3 delta = waypoints[0].position;
+				transform.position += delta;
+                foreach (var wp in waypoints)
+                {
+                    wp.position -= delta;
+                }
 			}
 		}
 
 		private void SetDefaultWaypoint()
         {
 			_currentWaypoint = new();
-			_currentWaypoint.position = transform.position;
+			_currentWaypoint.position = Vector3.zero;
 			_currentWaypoint.waitingTime = false;
 			_currentWaypoint.timeOnWaypoint = new Vector2(1, 2);
         }
@@ -512,26 +517,9 @@ namespace Keetzap.ZeldaMaker
 			waypoints.Add(_currentWaypoint);
 		}
 
-		public void ConvertWaypointsToEnemyPosition()
-        {
-			if (_waypointsAreInEnemyPosition) return;
-
-			Debug.Log("Converting waypoints to Enemy position.");
-			_waypointsAreInEnemyPosition = true;
-
-            foreach (var waypoint in waypoints)
-            {
-				waypoint.position -= transform.position;
-            }
-        }
-
+		// Method kept for runtime conversion in Awake
 		public void ConvertWaypointsToWorldPosition()
 		{
-			if (!_waypointsAreInEnemyPosition) return;
-
-			Debug.Log("Converting waypoints to World position.");
-			_waypointsAreInEnemyPosition = false;
-
 			foreach (var waypoint in waypoints)
 			{
 				waypoint.position += transform.position;
@@ -561,7 +549,7 @@ namespace Keetzap.ZeldaMaker
             {
                 Gizmos.color = pathLinesColor;
 
-				var waypointOffset = _waypointsAreInEnemyPosition ? transform.position : Vector3.zero;
+				var waypointOffset = Application.isPlaying ? Vector3.zero : transform.position;
 
                 if (patrolPointsOrder == PatrolPointsOrder.Sequential)
                 {
