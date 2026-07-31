@@ -486,9 +486,7 @@ MonoBehaviour:
   timeToRepositioning: 10
   openingTimeline: {fileID: 3424407398184674714}
   closingTimeline: {fileID: 8808375096170652981}
-  dialogMessage: 'You got a SILVER KEY!
-
-    Use it to unlock SILVER doors.'
+  dialogMessage: "Add your text here depending on \nthe type of collectable or reward."
   exitFeedback: {fileID: 4733260218807515632}
   endInteraction:
     m_PersistentCalls:

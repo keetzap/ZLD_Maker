@@ -1,4 +1,5 @@
 using UnityEditor;
+using UnityEngine;
 
 namespace Keetzap.ZeldaMaker
 {
@@ -38,7 +39,20 @@ namespace Keetzap.ZeldaMaker
 
         private void SectionChestProperties()
         {
-            EditorGUILayout.PropertyField(drop);
+            if (drop.objectReferenceValue == null)
+            {
+                EditorGUILayout.HelpBox("A Drop must be assigned!", MessageType.Error, true);
+                
+                Color originalColor = GUI.contentColor;
+                GUI.contentColor = new Color(1, 0.5f, 0.5f, 1);
+                EditorGUILayout.PropertyField(drop);
+                GUI.contentColor = originalColor;
+            }
+            else
+            {
+                EditorGUILayout.PropertyField(drop);
+            }
+            
             EditorGUILayout.PropertyField(collectableAnchorPosition);
             EditorGUILayout.PropertyField(gettingItemPosition);
         }

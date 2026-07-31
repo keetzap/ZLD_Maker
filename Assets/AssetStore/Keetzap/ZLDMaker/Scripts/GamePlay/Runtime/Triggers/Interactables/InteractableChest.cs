@@ -22,6 +22,12 @@ namespace Keetzap.ZeldaMaker
                 return;
             }
 
+            if (drop == null)
+            {
+                Debug.LogError($"[InteractableChest] The 'Drop' field is not assigned on '{gameObject.name}'. Please assign a Collectable to it in the Inspector.", this);
+                return;
+            }
+
             base.OnInteract();
 
             drop.autodestroyObject = false;
