@@ -8,46 +8,26 @@ namespace Keetzap.ZeldaMaker
     [CreateAssetMenu(fileName = "PlayerStatus", menuName = "KTZ_ZeldaMaker/PlayerStatus", order = 1)]
     public class GD_PlayerStats : ScriptableObject
     {
-        //[Serializable]
-        //public struct Collectable
-        //{
-        //    public GD_Collectable collectable;
-        //    public int amount;
-        //}
-
-        //[SerializeField] private List<Collectable> collectables;
-        //private Dictionary<GD_Collectable, int> _collectables = new Dictionary<GD_Collectable, int>();
-
-        //public void InitializeCollectables()
-        //{
-        //    for (int c = 0; c < collectables.Count; c++)
-        //    {
-        //        _collectables.Add(collectables[c].collectable, collectables[c].amount);
-        //    }
-        //}
-
-        [Tooltip("dsfsdfsdfs")]
+        [Tooltip("Player Values")]
         [SerializeField] private int lifesMaxCapacity; //Change to HPMaxCapacity OJO!!! = 10
-
-
         [SerializeField] private int currentCapacity; //Change to HPMaxCapacity = 3
         [SerializeField] private int currentLifes; //Change to CurrentHP 
-        
-        
         [SerializeField] private int initialLifes; //Change to InitialHP OJO!! Potser no es necessita. = 1
-        // Com a molt, potser dinàmic (floor & ceil de la meitat ???)
-
 
         [SerializeField] private int gems;
         [SerializeField] private int silverKeys;
         [SerializeField] private int goldenKeys;
         [SerializeField] private int bossKey;
 
-        //public int Hearts
-        //{
-        //    get => _collectables.FirstOrDefault(c => c.Key.typeOfCollectable == TypeOfCollectable.Heart).Value;
-        //    set { _collectables.FirstOrDefault(c => c.Key.typeOfCollectable == TypeOfCollectable.Heart); }
-        //}
+        [Header("Default Presset")]
+        public int presetLifesMaxCapacity = 3;
+        public int presetCurrentCapacity = 3;
+        public int presetCurrentLifes = 3;
+        public int presetInitialLifes = 3;
+        public int presetGems = 0;
+        public int presetSilverKeys = 0;
+        public int presetGoldenKeys = 0;
+        public int presetBossKey = 0;
 
         public int LifesMaxCapacity
         {
@@ -117,6 +97,18 @@ namespace Keetzap.ZeldaMaker
         public void InitializeLifes()
         {
             currentLifes = initialLifes;
+        }
+
+        public void ApplyPreset()
+        {
+            lifesMaxCapacity = presetLifesMaxCapacity;
+            currentCapacity = presetCurrentCapacity;
+            currentLifes = presetCurrentLifes;
+            initialLifes = presetInitialLifes;
+            gems = presetGems;
+            silverKeys = presetSilverKeys;
+            goldenKeys = presetGoldenKeys;
+            bossKey = presetBossKey;
         }
     }
 }

@@ -13,10 +13,18 @@ MonoBehaviour:
   m_Name: GD_PlayerStats
   m_EditorClassIdentifier: 
   lifesMaxCapacity: 6
-  currentCapacity: 0
-  currentLifes: 6
-  initialLifes: 3
-  gems: 0
+  currentCapacity: 6
+  currentLifes: 5
+  initialLifes: 5
+  gems: 20
   silverKeys: 0
   goldenKeys: 0
   bossKey: 0
+  presetLifesMaxCapacity: 6
+  presetCurrentCapacity: 6
+  presetCurrentLifes: 5
+  presetInitialLifes: 5
+  presetGems: 20
+  presetSilverKeys: 0
+  presetGoldenKeys: 0
+  presetBossKey: 0
