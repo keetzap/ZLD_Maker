@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: ACO_PRP_Lever_B
+  m_Controller: {fileID: 9100000, guid: 548fb0515840086429b34e9fbf271591, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: ee0faaf07f5fca243b50857b096d0809, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 56c6b30167c20a14fb35ffd65db272d7, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 7649bd73dfb772d44b4055370a312041, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: b56d3e8c0b54e6e4abc9e0594b2a2e9c, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 294fff88b0a199f40b5cbd1866b07871, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 23bfecdafc521024aa64f67c9a58a790, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 80b64fac6d47e1547a874139438d69d8, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: b64c7552469cc704f86cda4693c4b6f9, type: 2}
