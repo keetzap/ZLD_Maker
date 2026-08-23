@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: ACO_PRP_SpikesTrap
+  m_Controller: {fileID: 9100000, guid: 548fb0515840086429b34e9fbf271591, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: ee0faaf07f5fca243b50857b096d0809, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: d478b71daecd0d242b702b7ae43dd4e8, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 7649bd73dfb772d44b4055370a312041, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 31f7e0998f1a48a48842be35b661cc23, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 294fff88b0a199f40b5cbd1866b07871, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: c2c534d2dc423c64b9ce008dd1bbc77b, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 80b64fac6d47e1547a874139438d69d8, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 2e320a00672ad8c45a34371e2b262458, type: 2}
