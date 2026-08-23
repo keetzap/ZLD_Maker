@@ -77,7 +77,7 @@ MonoBehaviour:
   interactFeedback: {fileID: 0}
   pauseCharacter: 0
   hideWeapons: 0
-  destroyAfterInteraction: 1
+  destroyAfterInteraction: 0
   keyIsRequired: 0
   key: 2
   showAdditionalInfo: 0
