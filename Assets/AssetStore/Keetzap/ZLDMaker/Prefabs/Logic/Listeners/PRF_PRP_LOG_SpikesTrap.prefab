@@ -62,6 +62,11 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 8786162353366220830, guid: 22e9d531d71845a49be115638a94074b, type: 3}
   m_PrefabInstance: {fileID: 2327696017477931660}
   m_PrefabAsset: {fileID: 0}
+--- !u!65 &8530216218800778704 stripped
+BoxCollider:
+  m_CorrespondingSourceObject: {fileID: 6209559285504442204, guid: 22e9d531d71845a49be115638a94074b, type: 3}
+  m_PrefabInstance: {fileID: 2327696017477931660}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8734787369661106982 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6446218852503460266, guid: 22e9d531d71845a49be115638a94074b, type: 3}
@@ -129,8 +134,35 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3532915048224983406, guid: 9a63907cc9b189f4584fd0428ec2d6c1, type: 3}
       insertIndex: 0
       addedObject: {fileID: 8734787369661106982}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5153553045681606329, guid: 9a63907cc9b189f4584fd0428ec2d6c1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 9045954294175844925}
   m_SourcePrefab: {fileID: 100100000, guid: 9a63907cc9b189f4584fd0428ec2d6c1, type: 3}
+--- !u!1 &834769848548188271 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5153553045681606329, guid: 9a63907cc9b189f4584fd0428ec2d6c1, type: 3}
+  m_PrefabInstance: {fileID: 5481069800653844182}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &9045954294175844925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 834769848548188271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a752ad47287f4241904f03293724672, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Keetzap.ZeldaMaker.SpikesTrap
+  boxCollider: {fileID: 8530216218800778704}
+  lifeCost: -1
+  allowMovement: 0
+  safePoint: {fileID: 0}
+  timeToRespawn: 0.5
+  jumpHeight: 0.3
+  damageInterval: 0.15
 --- !u!4 &9013889187035932600 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3532915048224983406, guid: 9a63907cc9b189f4584fd0428ec2d6c1, type: 3}
