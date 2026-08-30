@@ -8,26 +8,49 @@ namespace Keetzap.ZeldaMaker
     [CreateAssetMenu(fileName = "PlayerStatus", menuName = "KTZ_ZeldaMaker/PlayerStatus", order = 1)]
     public class GD_PlayerStats : ScriptableObject
     {
+        public static class Fields
+        {
+            public static string LifesMaxCapacity => nameof(lifesMaxCapacity);
+            public static string CurrentCapacity => nameof(currentCapacity);
+            public static string CurrentLifes => nameof(currentLifes);
+            public static string InitialLifes => nameof(initialLifes);
+
+            public static string Gems => nameof(gems);
+            public static string SilverKeys => nameof(silverKeys);
+            public static string GoldenKeys => nameof(goldenKeys);
+            public static string BossKey => nameof(bossKey);
+
+            public static string PresetLifesMaxCapacity => nameof(presetLifesMaxCapacity);
+            public static string PresetCurrentCapacity => nameof(presetCurrentCapacity);
+            public static string PresetCurrentLifes => nameof(presetCurrentLifes);
+            public static string PresetInitialLifes => nameof(presetInitialLifes);
+            public static string PresetGems => nameof(presetGems);
+            public static string PresetSilverKeys => nameof(presetSilverKeys);
+            public static string PresetGoldenKeys => nameof(presetGoldenKeys);
+            public static string PresetBossKey => nameof(presetBossKey);
+        }
+
         [Tooltip("Player Values")]
-        [SerializeField] private int lifesMaxCapacity; //Change to HPMaxCapacity OJO!!! = 10
-        [SerializeField] private int currentCapacity; //Change to HPMaxCapacity = 3
-        [SerializeField] private int currentLifes; //Change to CurrentHP 
-        [SerializeField] private int initialLifes; //Change to InitialHP OJO!! Potser no es necessita. = 1
+        [SerializeField] private int lifesMaxCapacity = 3;
+        [SerializeField] private int currentCapacity = 3;
+        [SerializeField] private int currentLifes = 3;
+        [SerializeField] private int initialLifes = 3;
 
-        [SerializeField] private int gems;
-        [SerializeField] private int silverKeys;
-        [SerializeField] private int goldenKeys;
-        [SerializeField] private int bossKey;
+        [SerializeField] private int gems = 0;
+        [SerializeField] private int silverKeys = 0;
+        [SerializeField] private int goldenKeys = 0;
+        [SerializeField] private int bossKey = 0;
 
-        [Header("Default Presset")]
-        public int presetLifesMaxCapacity = 3;
-        public int presetCurrentCapacity = 3;
-        public int presetCurrentLifes = 3;
-        public int presetInitialLifes = 3;
-        public int presetGems = 0;
-        public int presetSilverKeys = 0;
-        public int presetGoldenKeys = 0;
-        public int presetBossKey = 0;
+        [Header("Preset Values")]
+        [SerializeField] private int presetLifesMaxCapacity = 3;
+        [SerializeField] private int presetCurrentCapacity = 3;
+        [SerializeField] private int presetCurrentLifes = 3;
+        [SerializeField] private int presetInitialLifes = 3;
+
+        [SerializeField] private int presetGems = 0;
+        [SerializeField] private int presetSilverKeys = 0;
+        [SerializeField] private int presetGoldenKeys = 0;
+        [SerializeField] private int presetBossKey = 0;
 
         public int LifesMaxCapacity
         {
