@@ -33,9 +33,15 @@ namespace Keetzap.ZeldaMaker
         {
             _listener = GetComponent<Listener>();
 
+            boxCollider.isTrigger = true;
+
             if (boxCollider.gameObject != gameObject)
             {
-                SpikesTrapTriggerForwarder forwarder = boxCollider.gameObject.AddComponent<SpikesTrapTriggerForwarder>();
+                SpikesTrapTriggerForwarder forwarder = boxCollider.gameObject.GetComponent<SpikesTrapTriggerForwarder>();
+                if (forwarder == null)
+                {
+                    forwarder = boxCollider.gameObject.AddComponent<SpikesTrapTriggerForwarder>();
+                }
                 forwarder.TargetTrap = this;
             }
         }
@@ -53,7 +59,7 @@ namespace Keetzap.ZeldaMaker
             if (other.CompareTag(StringsData.PLAYER))
             {
                 if (!boxCollider.bounds.Intersects(other.bounds)) return;
-                if (!_listener.IsEnabled) return;
+                if (_listener.GetCurrentState() != Listener.TypeOfState.Enabled.ToString()) return;
 
                 if (allowMovement)
                 {
